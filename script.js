@@ -2,10 +2,11 @@ import {fsdatabase} from "./config.js";
 import {doc, setDoc, query, getDocs, orderBy, limit, collection, getDoc} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions } from "./data.js";
 var totalscore = 0;
-var checker = 0;
+const start = new Date();
 function updateLeaderboard(name, score, rank){
-    const url = collection(fsdatabase, "Leaderboard");
-    setDoc((URL), {
+    const currentTime = Date.now();
+    const url = doc(fsdatabase, "Leaderboard", `${name}-${score}-${currentTime}`);
+    setDoc((url), {
         name: name,
         score: score,
         rank: rank,
@@ -32,9 +33,9 @@ function submitName() {
         const role = "Admin";
         totalscore = 9999999;
         const ra = "SSSR";
-        const start = new Date(2007, 2, 9, 14, 7);
+        const date = new Date(2007, 2, 9, 14, 7);
         const currentTime = Date.now();
-        const diff = currentTime - start;
+        const diff = currentTime - date;
         const strength = "???";
         const health = "???";
         const mana = "???";
