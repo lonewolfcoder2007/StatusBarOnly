@@ -62,6 +62,12 @@ body {
         display: block;
     }
 }
+#scoreboard{
+    display: none;
+    width: 400px;
+    margin-bottom: 30px;
+    position: relative;
+}
 #leaderboardDisplay{
     display: none;
     padding: 10px;
@@ -95,29 +101,37 @@ hr {
         max-width: 90%; /* Ensure it fits within small screen sizes */
         max-height: 60vh;
     }
+    #contacts{
+        max-width: 90%;
+        max-height: 10vh;
+    }
+}
+@media (max-height: 800px) {
+    #contacts{
+        max-height: 5vh;
+        margin-top: 30%;
+    }
 }
 .form-check-label{color: #FFFFFF;} 
-footer > h1{
-    font-style: normal;
-    color: #FFF;
-    display: grid;
-}
 footer{
-    position: fixed;
+    position: relative;
     margin-top: 15px;
     justify-content: center;
     bottom: 0;
 }
-footer > h1:hover{
-    cursor: pointer;
+footer > h2{
+    font-size: 1.5em;
 }
 footer > p{
     text-align: center;
+    font-size: 12px;
 }
 #contacts{
     display: flex;
     flex-direction: row;
     list-style-type: none;
+    height: 10%;
+    margin: 0;
 }
 #contacts > li{
     margin-right: 17%;
@@ -125,4 +139,7 @@ footer > p{
 #contacts > li > a{
     color: #FFF;
     font-size: 2em;
+}
+#contacts > li > a > i{
+    font-size:30px;
 }

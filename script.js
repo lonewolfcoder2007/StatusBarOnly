@@ -76,6 +76,7 @@ function submitName() {
         document.getElementById("charGender").textContent = gender;
         document.getElementById("SecondRole").style.display = "none";
         document.getElementById("characterDisplay").style.display = "block";
+        document.getElementById("scoreboard").style.display = "grid";
     }
     else if (name && gender != null) {
         console.log(name)
@@ -385,6 +386,7 @@ function submitName() {
         }
 
         document.getElementById("characterDisplay").style.display = "block";
+        document.getElementById("scoreboard").style.display = "grid";
         }   
     else{
         alert("Please fill in required field.");
