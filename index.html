@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,7 @@
     <img src="img/BKiri.png" alt="" class="position-absolute bottom-0 start-0">
     <img src="img/AKiri.png" alt="" class="position-absolute top-0 start-0">
 
-    <section id="inputForm" class="text-center">
+    <header id="inputForm" class="text-center">
         <p class="fw-bold text-light fs-3">WELCOME TO THE WORLD OF <span class="fw-bold text-info">ELDORIA</span></p>
         <div id="inputField">
             <input type="text" autocomplete="off" class="form-control bg-transparent text-light my-2 text-center" id="nameInput"
@@ -38,10 +37,10 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <button onclick="submitName()" class="btn btn-info w-100 text-light fw-medium">Start</button>
+                <button class="btn btn-info w-100 text-light fw-medium" id="ignition">Start</button>
             </div>
         </div>
-    </section>
+    </header>
 
 
     <section id="characterDisplay" class="w-100">
@@ -99,15 +98,33 @@
         <hr>
         <p class="text-light"><strong>Title:</strong></p>
         <ul class="text-light" id="charTitle"></ul>
+        <button class="btn btn-info w-100 text-light fw-medium" id="leaderboard">Show Leaderboard</button>
+    </section>
+    <section id="leaderboardDisplay">
+        <h2 class="fw-bold fs-3 text-light mb-4 text-center">RANKING</h2>
+        <div class="leaderboard">
+            <ul id="board"></ul>
+        </div>
     </section>
     <footer>
         <h2>2024 <i class="fa-solid fa-copyright"></i> Lonewolf</h2>
+        <p>Feel free to contact me at:</p>
+        <ul id="contacts">
+            <li>
+                <a href="https://www.facebook.com/lonewolfcoder"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+                <a href="https://github.com/lonewolfcoder2007"><i class="fa-brands fa-github"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/lonewolflegend2007/"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+        </ul>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js" type="module"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5
 s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-
 </html>

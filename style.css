@@ -62,7 +62,14 @@ body {
         display: block;
     }
 }
-
+#leaderboardDisplay{
+    display: none;
+    padding: 10px;
+    max-width: 400px;
+    max-height: 70vh; /* Limit the height to prevent overflow */
+    overflow-y: auto; /* Enable scrolling when content overflows */
+    overflow-x: hidden;
+}
 
 .btn-info {
     background: rgb(0, 48, 255);
@@ -96,10 +103,26 @@ footer > h1{
     display: grid;
 }
 footer{
-    position: static;
+    position: fixed;
     margin-top: 15px;
-    align-items: center;
+    justify-content: center;
+    bottom: 0;
 }
 footer > h1:hover{
     cursor: pointer;
+}
+footer > p{
+    text-align: center;
+}
+#contacts{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+#contacts > li{
+    margin-right: 17%;
+}
+#contacts > li > a{
+    color: #FFF;
+    font-size: 2em;
 }
