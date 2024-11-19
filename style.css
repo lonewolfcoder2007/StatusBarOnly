@@ -143,3 +143,6 @@ footer > p{
 #contacts > li > a > i{
     font-size:30px;
 }
+#board{
+    border: 0;
+}

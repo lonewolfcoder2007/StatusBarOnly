@@ -63,7 +63,7 @@ const roleSkills = {
     "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
-const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners"];
+const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch"];
 const titles = {
     "Knight": ["Champion of Light", "Guardian of the Realm", "Master of Arms", "Sword Guardian", "Defender of the Weak", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Mage": ["Master of Elements", "Arcane Scholar", "Stormcaller", "Elemental Weaver", "Mystic of the Arcane", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
@@ -144,6 +144,6 @@ const roleWeapon = {
     "Witch Hunter": ["Stake", "Revolver", "Axe", "Lighter", "Torch", "Pitchfork", "Counterspell"],
     "Dark Knight": ["Dark Heavy Sword", "Dark Short Sword", "Spear", "Club", "Bat", "Quickslash Sword of Darkness"],
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
-    "Runesmith": ["None"]
+    "Runesmith": ["Book of Rune"]
 };
 export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles}

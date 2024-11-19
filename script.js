@@ -103,7 +103,7 @@ function submitName() {
 
         document.getElementById("inputForm").style.display = "none";
 
-        const strength = getRandomNumber(1, 100);
+        const strength = getRandomNumber(20, 100);
         const health = getRandomNumber(25, 100);
         const mana = getRandomNumber(1, 100);
         const agi = getRandomNumber(1, 100);
@@ -386,7 +386,7 @@ function submitName() {
         }
 
         document.getElementById("characterDisplay").style.display = "block";
-        document.getElementById("scoreboard").style.display = "grid";
+        document.getElementById("scoreboard").style.display = "block";
         }   
     else{
         alert("Please fill in required field.");
@@ -396,6 +396,17 @@ function submitName() {
 document.getElementById("ignition").addEventListener("click", submitName)
 const URL = query(collection(fsdatabase, "Leaderboard"), orderBy("score", "desc"), limit(10));
 function DisplayLeaderboard(){
-    getDocs(URL);
+    getDocs(URL).then((results) =>
+    {
+        console.log(results);
+        const fileNames = results._snapshot.docChanges;
+        console.log(fileNames);
+        for (let i = 0; i < fileNames.length; i++) {
+            let data = fileNames[i].doc.data.value.mapValue.fields;
+            let name = data.name;
+            let score = data.score;
+            let rank = data.rank;
+        }
+    });
 }
 document.getElementById("leaderboard").addEventListener("click", DisplayLeaderboard)
