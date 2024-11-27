@@ -1,8 +1,7 @@
 import {fsdatabase} from "./config.js";
-import {doc, setDoc, query, getDocs, orderBy, limit, collection, getDoc} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import {doc, setDoc, query, getDocs, orderBy, limit, collection} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions } from "./data.js";
 var totalscore = 0;
-const start = new Date();
 function updateLeaderboard(name, score, rank){
     const currentTime = Date.now();
     const url = doc(fsdatabase, "Leaderboard", `${name}-${score}-${currentTime}`);
@@ -403,10 +402,48 @@ function DisplayLeaderboard(){
         console.log(fileNames);
         for (let i = 0; i < fileNames.length; i++) {
             let data = fileNames[i].doc.data.value.mapValue.fields;
-            let name = data.name;
-            let score = data.score;
-            let rank = data.rank;
+            let name = data.name.stringValue;
+            let score = data.score.integerValue;
+            let rank = data.rank.stringValue;
+            let row = document.createElement('tr');
+            let data1 = document.createElement('td');
+            let data2 = document.createElement('td');
+            let data3 = document.createElement('td');
+            let number = document.createElement('td');
+            row.setAttribute("id", `row${i}`);
+            data1.innerHTML = name;
+            data2.innerHTML = score;
+            data3.innerHTML = rank;
+            number.innerHTML = i + 1;
+            let leaderboard = document.getElementById("board");
+            leaderboard.appendChild(row);
+            row.appendChild(number);
+            row.appendChild(data1);
+            row.appendChild(data2);
+            row.appendChild(data3);
+            if(i == 0){
+                data1.style.color = "#F39C12";
+                data2.style.color = "#F39C12";
+                data3.style.color = "#F39C12";
+                number.style.color = "#F39C12";
+            }
+            else if(i == 1){
+                data1.style.color = "#CCCCFF";
+                data2.style.color = "#CCCCFF";
+                data3.style.color = "#CCCCFF";
+                number.style.color = "#CCCCFF";
+            }
+            else if(i == 2){
+                data1.style.color = "#78281F";
+                data2.style.color = "#78281F";
+                data3.style.color = "#78281F";
+                number.style.color = "#78281F";
+            }
         }
+        document.getElementById("leaderboardDisplay").style.display = "block";
+        document.getElementById('reset').style.display = "block";
+        document.getElementById("characterDisplay").style.display = "none";
+        document.getElementById('scoreboard').style.display = 'none';
     });
 }
 document.getElementById("leaderboard").addEventListener("click", DisplayLeaderboard)

@@ -62,7 +62,7 @@ body {
         display: block;
     }
 }
-#scoreboard{
+#scoreboard, #reset{
     display: none;
     width: 400px;
     margin-bottom: 30px;

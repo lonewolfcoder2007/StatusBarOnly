@@ -108,6 +108,9 @@
             <table id="board"></table>
         </div>
     </section>
+    <div id="reset">
+        <button class="btn btn-info w-100 text-light fw-medium" id="resetButton">Try again?</button>
+    </div>
     <footer>
         <h2>2024 <i class="fa-solid fa-copyright"></i> Lonewolf</h2>
         <p>Feel free to contact me at:</p>
@@ -123,7 +126,11 @@
             </li>
         </ul>
     </footer>
-
+    <script>
+        document.getElementById('resetButton').addEventListener('click', function(){
+            window.location.reload();
+        })
+    </script>
     <script src="./script.js" type="module"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5
