@@ -409,11 +409,14 @@ function DisplayLeaderboard(){
             let data1 = document.createElement('td');
             let data2 = document.createElement('td');
             let data3 = document.createElement('td');
+            let strong1 = document.createElement('strong');
+            let strong2 = document.createElement('strong');
+            let strong3 = document.createElement('strong');
             let number = document.createElement('td');
             row.setAttribute("id", `row${i}`);
-            data1.innerHTML = name;
-            data2.innerHTML = score;
-            data3.innerHTML = rank;
+            strong1.innerHTML = name;
+            strong2.innerHTML = score;
+            strong3.innerHTML = rank;
             number.innerHTML = i + 1;
             let leaderboard = document.getElementById("board");
             leaderboard.appendChild(row);
@@ -421,6 +424,9 @@ function DisplayLeaderboard(){
             row.appendChild(data1);
             row.appendChild(data2);
             row.appendChild(data3);
+            data1.appendChild(strong1);
+            data2.appendChild(strong2);
+            data3.appendChild(strong3);
             if(i == 0){
                 data1.style.color = "#F39C12";
                 data2.style.color = "#F39C12";
@@ -444,6 +450,11 @@ function DisplayLeaderboard(){
         document.getElementById('reset').style.display = "block";
         document.getElementById("characterDisplay").style.display = "none";
         document.getElementById('scoreboard').style.display = 'none';
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(`Data retrieving unsuccessful, code ${errorCode}, message ${errorMessage}`);
     });
 }
 document.getElementById("leaderboard").addEventListener("click", DisplayLeaderboard)
