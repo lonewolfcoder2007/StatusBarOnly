@@ -2,6 +2,7 @@ import {fsdatabase} from "./config.js";
 import {doc, setDoc, query, getDocs, orderBy, limit, collection} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions } from "./data.js";
 var totalscore = 0;
+var Time = new Date;
 function updateLeaderboard(name, score, rank){
     const currentTime = Date.now();
     const url = doc(fsdatabase, "Leaderboard", `${name}-${score}-${currentTime}`);
@@ -412,12 +413,13 @@ function DisplayLeaderboard(){
             let strong1 = document.createElement('strong');
             let strong2 = document.createElement('strong');
             let strong3 = document.createElement('strong');
+            let strong4 = document.createElement('strong');
             let number = document.createElement('td');
             row.setAttribute("id", `row${i}`);
             strong1.innerHTML = name;
             strong2.innerHTML = score;
             strong3.innerHTML = rank;
-            number.innerHTML = i + 1;
+            strong4.innerHTML = i + 1;
             let leaderboard = document.getElementById("board");
             leaderboard.appendChild(row);
             row.appendChild(number);
@@ -427,6 +429,7 @@ function DisplayLeaderboard(){
             data1.appendChild(strong1);
             data2.appendChild(strong2);
             data3.appendChild(strong3);
+            number.appendChild(strong4);
             if(i == 0){
                 data1.style.color = "#F39C12";
                 data2.style.color = "#F39C12";
