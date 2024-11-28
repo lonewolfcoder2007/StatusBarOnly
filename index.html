@@ -6,18 +6,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="page.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
-<body>
+<body class="position-relative">
+    <img src="img/AKanan.png" alt="" class="position-absolute top-0 end-0">
+    <img src="img/Bkanan.png" alt="" class="position-absolute bottom-0 end-0">
+    <img src="img/BKiri.png" alt="" class="position-absolute bottom-0 start-0">
+    <img src="img/AKiri.png" alt="" class="position-absolute top-0 start-0">
     <section>
-        <div id="fade-in-1"></div>
-        <div id="fade-in-2"></div>
-        <div id="fade-in-3"></div>
+        <div id="fade-in-1"><h1>Congratulations! You are now a dead man!</h1></div>
+        <div id="fade-in-2"><h1>Yes, I know being a dead man is not funny, and I'm giving you a chance of being alive, again!</h1></div>
+        <div id="fade-in-3"><h1>The question is, do you accept it?</h1></div>
         <div id="fade-in-4">
-            <button class="btn-info" id="continueButton">Continue</button>
-            <button class="btn-info" id="bailOut">Forfeit</button>
+            <button class="btn btn-info w-100 text-light fw-medium" id="continueButton">Accept</button>
+            <button class="btn btn-info w-100 text-light fw-medium" id="bailOut">Forfeit</button>
         </div>
     </section>
     <script>
@@ -25,26 +29,38 @@
             window.location.replace('page.html');
         })
         document.getElementById('bailOut').addEventListener('click', function(){
-            window.close();
+            window.location.replace('bait.html');
         })
-        function delay(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
+        function FadeIn(element){
+            let fading_element = document.getElementById(element);
+            let opacity = 0;
+            let fadeIn = setInterval(function(){
+                fading_element.style.opacity = opacity;
+                opacity += 0.01;
+            }, 10)
+            if(opacity >= 1){
+                clearInterval(fadeIn);
+            }
         }
-        $(document).ready(async function(){
-            $("#fade-in-1").fadeIn(3000);
-            delay(2000);
-            $("#fade-in-1").fadeOut(3000);
-            delay(2000);
-            $("#fade-in-2").fadeIn(3000);
-            delay(2000);
-            $("#fade-in-2").fadeOut(3000);
-            delay(2000);
-            $("#fade-in-3").fadeIn(3000);
-            delay(2000);
-            $("#fade-in-3").fadeOut(3000);
-            delay(2000);
-            $("#fade-in-4").fadeIn(3000);
-        })
+        function FadeOut(element){
+            var el = document.getElementById(element);
+            var opacity = 1;
+            var interval = setInterval(function(){
+                opacity -= 0.01;
+                el.style.opacity = opacity
+            
+                if(opacity <= 0){
+                    clearInterval(interval);
+                    el.style.display = 'none';
+                }
+            }, 5)
+        }
+        FadeIn("fade-in-1");
+        setTimeout(FadeOut, 5000, "fade-in-1");
+        setTimeout(FadeIn, 5500, "fade-in-2");
+        setTimeout(FadeOut, 11000, "fade-in-2");
+        setTimeout(FadeIn, 12000, "fade-in-3");
+        setTimeout(FadeIn, 12500, "fade-in-4");
     </script>
 </body>
 </html>

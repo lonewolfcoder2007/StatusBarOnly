@@ -2,7 +2,7 @@ import {fsdatabase} from "./config.js";
 import {doc, setDoc, query, getDocs, orderBy, limit, collection} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions } from "./data.js";
 var totalscore = 0;
-var Time = new Date;
+new Date;
 function updateLeaderboard(name, score, rank){
     const currentTime = Date.now();
     const url = doc(fsdatabase, "Leaderboard", `${name}-${score}-${currentTime}`);
