@@ -11,21 +11,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="fade-in-1"></div>
-    <div id="fade-in-2"></div>
-    <div id="fade-in-3"></div>
-    <div id="fade-in-4">
-        <button class="btn-info" id="continueButton">Continue</button>
-        <button class="btn-info" id="bailOut">Forfeit</button>
-    </div>
+    <section>
+        <div id="fade-in-1"></div>
+        <div id="fade-in-2"></div>
+        <div id="fade-in-3"></div>
+        <div id="fade-in-4">
+            <button class="btn-info" id="continueButton">Continue</button>
+            <button class="btn-info" id="bailOut">Forfeit</button>
+        </div>
+    </section>
     <script>
         document.getElementById('continueButton').addEventListener('click', function(){
             window.location.replace('page.html');
         })
+        document.getElementById('bailOut').addEventListener('click', function(){
+            window.close();
+        })
         function delay(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-        ("*").load(async function(){
+        $(document).ready(async function(){
             $("#fade-in-1").fadeIn(3000);
             delay(2000);
             $("#fade-in-1").fadeOut(3000);
