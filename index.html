@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" href="img/AB.jpg" type="image/png">
     <link rel="stylesheet" href="fontawesome-free-6.6.0-web/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="page.css">
@@ -17,7 +18,7 @@
     <img src="img/AKiri.png" alt="" class="position-absolute top-0 start-0">
     <section>
         <div id="fade-in-1"><h1>Congratulations! You are now a dead man!</h1></div>
-        <div id="fade-in-2"><h1>Yes, I know being a dead man is not funny, and I'm giving you a chance of being alive, again!</h1></div>
+        <div id="fade-in-2"><h1>Yes, I know being a dead man is not funny, and I'm giving you a resurrection!</h1></div>
         <div id="fade-in-3"><h1>The question is, do you accept it?</h1></div>
         <div id="fade-in-4">
             <button class="btn btn-info w-100 text-light fw-medium" id="continueButton">Accept</button>
@@ -46,9 +47,8 @@
             var el = document.getElementById(element);
             var opacity = 1;
             var interval = setInterval(function(){
-                opacity -= 0.01;
                 el.style.opacity = opacity
-            
+                opacity -= 0.01;
                 if(opacity <= 0){
                     clearInterval(interval);
                     el.style.display = 'none';
@@ -57,7 +57,7 @@
         }
         FadeIn("fade-in-1");
         setTimeout(FadeOut, 5000, "fade-in-1");
-        setTimeout(FadeIn, 5500, "fade-in-2");
+        setTimeout(FadeIn, 6000, "fade-in-2");
         setTimeout(FadeOut, 11000, "fade-in-2");
         setTimeout(FadeIn, 12000, "fade-in-3");
         setTimeout(FadeIn, 12500, "fade-in-4");

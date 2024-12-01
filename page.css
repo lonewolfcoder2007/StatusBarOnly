@@ -156,5 +156,7 @@ table{
     max-width: 400px;
 }
 table > tr > td{
-    padding: 20px;
+    padding: 5px;
+    width: 170px;
+    text-align: left;
 }
