@@ -3,18 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-@keyframes fade {
-    0%, 100% {opacity: 0;
-    display: none;}
-    50% {opacity: 1;
-    display: block;}
-}
-@keyframes faded{
-    0% {opacity: 0;
-    display: none;}
-    100% {opacity: 1;
-    display: block;}
-}
 body{
     object-fit: fill;
     height: 100vh;
