@@ -2,9 +2,9 @@ const roles = [
     "Knight", "Mage", "Rogue", "Archer", "Paladin", "Blacksmith", "Healer", "Assassin", "Saint", "Tamer",
     "Necromancer", "Unknown", "Death Knight", "Farmer", "Demon King", "Swordman", "Magic Swordman",
     "Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire",
-    "Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Samurai", "Monk", "Vampire Lord",
+    "Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord",
     "Warrior", "Summoner", "Witch Hunter", "Dark Knight",
-    "Inquisitor", "Scout", "Lancer", "Runesmith", "Champion"
+    "Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "panzertruppe"
 ];
 const races = [
     "Human", "Elf", "Dwarf", "Orc", "Beast", "Dark Elf", "Dragon", "Half Dragon", "Half Elf", "Demon",
@@ -52,6 +52,7 @@ const roleSkills = {
     "Priest": ["Total Immunity", "Holy Prayer", "Purify", "Healing Light", "Divine Intervention", "Blessing of Protection", "Resurrection", "Smite", "Holy Aura", "Faith Shield", "Prayer of Hope", "Restoration", "Spiritual Guidance", "Divine Judgment", "Miracle Healing", "Aura of Devotion", "Sermon of Light", "Benediction", "Martyrdom", "Prayer of Salvation", "Divine Grace"],
     "Alchemist": ["Total Immunity", "Potion Crafting", "Transmutation", "Herb Knowledge", "Elemental Infusion", "Elixir Mastery", "Alchemy Circle", "Catalyst Expertise", "Mana Elixirs", "Poison Brewing", "Stone Transmutation", "Antidote Creation", "Explosive Concoctions", "Potion of Speed", "Regeneration Brew", "Flame Essence", "Alchemy Enhancement", "Mana Restoration", "Resilience Brew", "Healing Elixirs", "Elemental Fusion"],
     "Ranger": ["Total Immunity", "Bow Mastery", "Tracking", "Stealth", "Hunting", "Nature Knowledge", "Animal Companion", "Cloak of Shadows", "Precision Shot", "Silent Kill", "Trap Setting", "Camouflage", "Survival Instinct", "Arrow Mastery", "Rapid Fire", "Animal Bond", "Foraging", "Evasion", "Swift Movements", "Lethal Arrow", "Wilderness Navigation"],
+    "Army Ranger": ["Total Immunity", "Tracking", "Stealth", "Cloak of Shadows", "Precision Shot", "Camouflage", "Survival Instinct", "Rapid Fire", "Evasion", "Swift Movements", "Exceptional Navigation", "Medal of Honor Recipient"],
     "Samurai": ["Total Immunity", "Katana Mastery", "Bushido Code", "Quick Draw", "Parry", "Iaijutsu", "Sword Stance", "Focused Strike", "Spiritual Resolve", "Deflect Arrows", "Blade of Honor", "Perfect Focus", "Kiai", "Dual Katana", "Swift Blade", "Martial Spirit", "Battle Discipline", "Zen Meditation", "Blade Fury", "Warrior's Patience", "Sacred Oath"],
     "Monk": ["Total Immunity", "Chi Mastery", "Meditation", "Palm Strike", "Iron Fist", "Serene Mind", "Tiger Claw", "Pressure Point", "Swift Movement", "Chi Shield", "Inner Strength", "Spiritual Awareness", "Energy Channeling", "Keen Reflexes", "Healing Meditation", "Chi Burst", "Mystic Harmony", "Whirling Kick", "Fist of Fury", "Evasion", "Focused Breathing"],
     "Vampire Lord": ["Total Immunity", "Blood Drain", "Bat Transformation", "Night Vision", "Immortal Presence", "Vampiric Aura", "Shadow Strike", "Dark Seduction", "Blood Pact", "Mist Form", "Blood Frenzy", "Summon Bats", "Night Stalker", "Immortal Regeneration", "Crimson Fury", "Charm of the Undead", "Blood Ritual", "Shadow Dash", "Nightwalker", "Hypnotic Gaze", "Vampire's Thrall"],
@@ -60,7 +61,8 @@ const roleSkills = {
     "Dark Knight": ["Total Immunity", "Shadow Strike", "Death Blade", "Dark Aura", "Nightmare Slash", "Soul Corruption", "Void Edge", "Unholy Strength", "Vampiric Touch", "Fell Cleave", "Shadow Barrier", "Blackened Blade", "Dark Shield", "Abyssal Wrath", "Soul Drain", "Grim Resolve", "Spectral Slash", "Voidwalker", "Dread Charge", "Cursed Armor", "Siphon Life"],
     "Scout": ["Total Immunity", "Keen Eye", "Ambush", "Tracking", "Silent Step", "Sniper Shot", "Camouflage", "Hawk’s Vision", "Quick Shot", "Evasion", "Trap Mastery", "Trailblazer", "Agility Boost", "Escape Artist", "Deadly Aim", "Stealth Tactics", "Bow Mastery", "Terrain Mastery", "Survivalist", "Vantage Point", "Reconnaissance"],
     "Runesmith": ["Total Immunity", "Rune Crafting", "Weapon Inscription", "Armor Engraving", "Rune Empowerment", "Magic Infusion", "Rune of Fire", "Rune of Frost", "Rune of Protection", "Mystic Inscription", "Arcane Engravings", "Rune of Lightning", "Rune of Life", "Stone Rune", "Empowered Glyphs", "Rune Channeling", "Spirit Binding", "Rune of Destruction", "Mystic Warding", "Rune of Clarity", "Enchantment Mastery"],
-    "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"]
+    "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"],
+    "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
 const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch"];
@@ -95,6 +97,7 @@ const titles = {
     "Priest": ["Blessed Cleric", "Voice of the Divine", "Keeper of Faith", "Holy Shepherd", "Bearer of Grace", "Soul Keeper", "Divine Intercessor", "Servant of the Light", "Harbinger of the Sacred", "Guardian of the Faithful"],
     "Alchemist": ["Master of Transmutation", "Potion Master", "Crafter of Elixirs", "Herbalist of the Realms", "Arcane Chemist", "Wielder of Elements", "Mixer of Potions", "Catalyst of Change", "Enchanter of Potions", "Alchemical Sage"],
     "Ranger": ["Warden of the Wilds", "Guardian of Nature", "Tracker of Beasts", "Forest Wanderer", "Nature’s Protector", "Hunter of the Wild", "Beast Seeker", "Woodsman of the Realm", "Pathfinder", "Wilds Keeper", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
+    "Army Ranger": ["Infilltration", "Slient Hunter", "Survival Expert", "Grenade Specialist", "Jungle Warfare Expert", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Samurai": ["Warrior of Honor", "Master of the Katana", "Bushido Blade", "Sword of Honor", "Lord of the Katana", "Disciple of Bushido", "Master of the Sword", "Ronin of Valor", "Keeper of the Code", "Blade of Honor", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Monk": ["Disciple of Peace", "Master of Tranquility", "Fist of the Ancients", "Silent Guardian", "Wanderer of Virtue", "Keeper of Balance", "Mystic Warrior", "Guardian of Serenity", "Devout of the Spirit", "Master of Harmony"],
     "Vampire Lord": ["Dark Blood King", "Lord of Night", "Sovereign of Shadows", "Ruler of the Undead", "Master of Vampires", "Night Stalker", "Bloodthirsty Monarch", "Shadow Emperor", "Darkblood Ruler", "Wraith of the Night", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
@@ -103,7 +106,8 @@ const titles = {
     "Dark Knight": ["Knight of Shadows", "Bearer of Darkness", "Ruler of Night", "Wielder of the Void", "Shadowbringer", "Champion of Despair", "Harbinger of Night", "Darkblade", "Knight of the Abyss", "Warlord of the Void", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Scout": ["Pathfinder of the Wild", "Master Tracker", "Seeker of Secrets", "Ranger of the Unknown", "Warden of the Wilds", "Lightfoot", "Silent Watcher", "Tracker of Beasts", "Explorer of Realms", "Wilderness Wanderer", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Runesmith": ["Master of Runes", "Carver of Magic", "Wielder of Ancient Symbols", "Runewright", "Smith of Power", "Crafter of Enchantment", "Runescribe", "Bearer of Magical Symbols", "Runeforge Master", "Lord of the Runes"],
-    "Champion": ["Hero of the People", "Guardian of the Realm", "Sword of Victory", "Master of the Arena", "Warlord of Glory", "Victor of the Colosseum", "Lord of Triumph", "Conqueror of Realms", "Battle Champion", "Champion of Legends", "Great War Participant - Winning Side"]
+    "Champion": ["Hero of the People", "Guardian of the Realm", "Sword of Victory", "Master of the Arena", "Warlord of Glory", "Victor of the Colosseum", "Lord of Triumph", "Conqueror of Realms", "Battle Champion", "Champion of Legends", "Great War Participant - Winning Side"],
+    "Panzertruppe": ["Panzer Ace", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
 };
 const roleWeapon = {
     "Knight": ["Heavy Sword", "Short Sword", "Sword and Shield", "Spear", "Club", "Bat"],
@@ -144,6 +148,7 @@ const roleWeapon = {
     "Witch Hunter": ["Stake", "Revolver", "Axe", "Lighter", "Torch", "Pitchfork", "Counterspell"],
     "Dark Knight": ["Dark Heavy Sword", "Dark Short Sword", "Spear", "Club", "Bat", "Quickslash Sword of Darkness"],
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
-    "Runesmith": ["Book of Rune"]
+    "Runesmith": ["Book of Rune"],
+    "Panzertruppe": ["Light Tank", "Tankette", "Assault Gun", "Tank Destroyer", "Medium Tank", "Self-Propelled Anti-Aircraft vehicle", "Heavy Tank", "Super Heavy Tank", "Land Battleship", "Main Battle Tank"]
 };
 export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles}

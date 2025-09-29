@@ -319,9 +319,7 @@ function submitName() {
                     totalscore = totalscore + SSS_score;
                 }
             }
-            if(!characterWeapon.includes(weapon)){
-                characterWeapon.push(`${weapon} (${rank})`);
-            }
+            characterWeapon.push(`${weapon} (${rank})`);
         }
         if(totalscore < F_overall){
             ra = "N/A";
