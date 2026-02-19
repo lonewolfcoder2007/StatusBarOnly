@@ -63,7 +63,7 @@ const roleSkills = {
     "Runesmith": ["Total Immunity", "Rune Crafting", "Weapon Inscription", "Armor Engraving", "Rune Empowerment", "Magic Infusion", "Rune of Fire", "Rune of Frost", "Rune of Protection", "Mystic Inscription", "Arcane Engravings", "Rune of Lightning", "Rune of Life", "Stone Rune", "Empowered Glyphs", "Rune Channeling", "Spirit Binding", "Rune of Destruction", "Mystic Warding", "Rune of Clarity", "Enchantment Mastery"],
     "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"],
     "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"],
-    "Artillerist": ["Total Immunity", "Barrage Fire", "Rocket Artillerist", "Long-Range Shells", "Minengeschoss", "Precision Fire", "Rapid Fire", "Precise Aim", "Sustainable Firing", "Hit and Run", "Overconsumption"]
+    "Artillerist": ["Total Immunity", "Barrage Fire", "Rocket Artillerist", "Long-Range Shells", "Minengeschoss", "Precision Fire", "Rapid Fire", "Precise Aim", "Sustainable Firing", "Hit and Run", "Overconsumption", "Infantry Suppression"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
 const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch", "Chronos"];
@@ -151,20 +151,191 @@ const roleWeapon = {
     "Dark Knight": ["Dark Heavy Sword", "Dark Short Sword", "Spear", "Club", "Bat", "Quickslash Sword of Darkness"],
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
     "Runesmith": ["Book of Rune"],
-    "Panzertruppe": ["Light Tank", "Tankette", "Self-Propelled Gun", "Medium Tank", "Self-Propelled Anti-Aircraft Vehicle", "Heavy Tank", "Super Heavy Tank", "Land Battleship", "Main Battle Tank", "Infantry Fighting Vehicle"],
+    "Panzertruppe": ["Light Tank", "Tankette", "Self-Propelled Gun", "Medium Tank", "Self-Propelled Anti-Aircraft Vehicle", "Heavy Tank", "Super Heavy Tank", "Main Battle Tank", "Infantry Fighting Vehicle/Armor Support Vehicle", "Armored Personnel Carrier"],
     "Artillerist": ["Anti-Air Gun", "Multirole Cannon", "Anti-Tank Gun", "Howitzer"]
 };
 const tankVariants = {
     "PSHT": {
-        "Light Tank": ["T-18", "T-26", "T-50", "T-60", "T-70", "PT-76", "BT-5", "BT-7", "RBT-5", ], 
+        "Light Tank": ["T-18", "T-26", "T-50", "T-60", "T-70", "PT-76", "BT-5", "BT-7", "RBT-5", "PT-76-57", "2S25", "2S25M", "2S38"], 
         "Tankette": ["T-27"], 
-        "Self-Propelled Gun": ["SU-76", "SU-85", "SU-100", "SU-122", "SU-152", "ISU-122", "ISU-152"], 
+        "Self-Propelled Gun": ["SU-76", "SU-85", "SU-100", "SU-122", "SU-152", "ISU-122", "ISU-152", "SU-57", "ASU-57"], 
         "Medium Tank": ["T-28", "T-34", "T-34-85", "T-44", "T-54/55"],
-        "Self-Propelled Anti-Aircraft Vehicle": ["ZSU-37", "ZSU-37-2", "ZSU-57-2"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["ZSU-37", "ZSU-37-2", "ZSU-57-2", "ZSU-23-4", "Osa-M", "Pantsir-S1", "Strela-10", "2S6"],
         "Heavy Tank": ["KV-1", "KV-2", "IS-85/IS-1", "IS-2", "IS-3", "IS-4", "T-10"],
-        "Land Battleship": ["T-35"],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle": []
+        "Super Heavy Tank": ["T-35", "SMK"],
+        "Main Battle Tank": ["T-62", "T-64", "T-72", "T-80", "T-90", "T-14 Armata"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["BMP-1", "BMP-2", "BMP-3", "BMP-2M", "BMPT Terminator"],
+        "Armored Personnel Carrier": ["BTR-80A", "BTR-82AT", "BMD-4", "BMD-4M", "BMD-4M2"]
     },
+    "RHODES": {
+        "Light Tank": ["Ka-Mi", "Ha-Go", "Ke-Ni", "Type 16"],
+        "Tankette": ["Type 94", "Type 97 Te-Ke"],
+        "Self-Propelled Gun": ["Ro-Go", "Ho-Ro",, "Chi-Ha LG", "Ho-Ni I", "Ho-Ni III", "Na-To", "Type 99", "Ho-Ri", "Type 60 SPRG", "Type 75 SPH"],
+        "Medium Tank": ["Ka-Chi", "Chi-He", "Ho-I", "Chi-Ha", "Chi-Ha Kai", "Chi-Nu", "Chi-To", "Chi-Ri"],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": ["Type 61", "Type 74", "Type 90", "Type 10"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["Type 24 ICV", "Type 87 RCV", "Type 89"],
+        "Armored Personnel Carrier": ["Type 63","Type 70"]
+    },
+    "Silverthorn": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Dragonshade": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Shadowspire": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "El Gasing": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Mariners": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Yankees": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Killswitch": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    },
+    "Chronos": {
+        "Light Tank": [],
+        "Tankette": [],
+        "Self-Propelled Gun": [],
+        "Medium Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": [],
+        "Heavy Tank": [],
+        "Super Heavy Tank": [],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
+        "Armored Personnel Carrier": []
+    }
 };
-export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants}
+const artilleryVariant = {
+    "PSHT": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "RHODES": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Silverthorn": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Dragonshade": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Shadowspire": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "El Gasing": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Mariners": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Yankees": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Killswitch": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    },
+    "Chronos": {
+        "Anti-Air Gun": [],
+        "Multirole Cannon": [],
+        "Anti-Tank Gun": [],
+        "Howitzer": []
+    }
+};
+export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants, artilleryVariant}

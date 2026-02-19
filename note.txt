@@ -4,6 +4,7 @@ Silverthorn = France
 Dragonshade = England
 Shadowspire = Italy
 El Gasing = Germany
-Mariners, Yankees = USA
+Mariners = Sweden
+Yankees = USA
 Killswitch: Israel
 Chronos: China
