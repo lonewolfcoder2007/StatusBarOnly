@@ -277,8 +277,8 @@ function submitName() {
         }
 
         const availableWeapons = roleWeapon[role];
-        const characterWeapon = [];
-        const WeaponNumber = 1;
+        var characterWeapon = [];
+        const WeaponNumber = getRandomNumber(1, 3);
 
         for (let i = 0; i <WeaponNumber; i++){
             const weapon = getRandomElement(availableWeapons);

@@ -1,0 +1,9 @@
+PSHT = USSR
+RHODES = Japan
+Silverthorn = France
+Dragonshade = England
+Shadowspire = Italy
+El Gasing = Germany
+Mariners, Yankees = USA
+Killswitch: Israel
+Chronos: China

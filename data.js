@@ -4,7 +4,7 @@ const roles = [
     "Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire",
     "Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord",
     "Warrior", "Summoner", "Witch Hunter", "Dark Knight",
-    "Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "panzertruppe"
+    "Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "Panzertruppe", "Artillerist"
 ];
 const races = [
     "Human", "Elf", "Dwarf", "Orc", "Beast", "Dark Elf", "Dragon", "Half Dragon", "Half Elf", "Demon",
@@ -43,7 +43,7 @@ const roleSkills = {
     "Archmage": ["Ultimate Fireball", "Meteor Shower", "Elemental Mastery", "Arcane Surge", "Mystic Explosion", "Mana Mastery", "Teleportation", "Time Warp", "Mana Storm", "Reality Shatter", "Infinite Wisdom", "Arcane Barrage", "Planar Rift", "Arcane Manipulation", "Elemental Fury", "Cosmic Insight", "Eternal Flame", "Mana Explosion", "Spellsurge", "Mana Infusion", "Total Immunity"],
     "Slave": ["Endurance", "Survival Instinct", "Pain Tolerance", "Obedience", "Escape Artist", "Servitude Mastery", "Submission", "Silent Endurance", "Servant's Will", "Willpower", "Stealth Work", "Escape Plan", "Unseen Movement", "Rebellious Mind", "Survival Expert", "Hidden Talent", "Chained Strength", "Mental Resilience", "Resistance", "Hidden Strength", "Total Immunity"],
     "Chef": ["Cooking", "Ingredient Sourcing", "Flavor Mastery", "Knife Skills", "Heat Control", "Herb Knowledge", "Food Presentation", "Recipe Creation", "Gourmet Crafting", "Culinary Expertise", "Meal Preparation", "Food Preservation", "Baking Mastery", "Herb Infusion", "Ingredient Substitution", "Food Safety", "Multitasking", "Culinary Innovation", "Taste Testing", "Plating Expertise", "Total Immunity"],
-    "Rifleman": ["Precise Aim", "Wind Estimation", "Critical Strike", "Lethality", "Mass Shooting", "Bayonet Fight", "Multishot", "Dead Eye", "Overload", "Suppresive Fire", "Close Air Support", "Guerrilla", "Artillery Strike", "Iron Clad", "Dual Welding", "Bullseye", "Total Focus", "Eyes In The Sky", "Infinite Mazagine", "Bulletproof", "Limit Break", "Two Birds One Stone", "APHE Shots", "Total Immunity", "Elemental Bullets"],
+    "Rifleman": ["Precise Aim", "Wind Estimation", "Critical Strike", "Lethality", "Mass Shooting", "Bayonet Fight", "Multishot", "Dead Eye", "Overload", "Suppresive Fire", "Close Air Support", "Guerrilla", "Artillery Bombardment", "Iron Clad", "Dual Welding", "Bullseye", "Total Focus", "Eyes In The Sky", "Infinite Mazagine", "Bulletproof", "Limit Break", "Two Birds One Stone", "APHE Shots", "Total Immunity", "Elemental Bullets"],
     "Sapper": ["Suppressive Fire", "Field Repair", "Bomb Defuse", "Sabotage", "Limit Break", "Iron Clad", "Marvelous Engineering", "Excavation", "Minesweeping", "Multitasking", "Confrontation", "No Retreat", "Demolition Expert", "Unconventional Warfare", "Eagle Eyes", "Damage Reduction", "Total Immunity", "Front Line Defense"],
     "Vampire": ["Total Immunity", "Blood Drain", "Bat Transformation", "Night Vision", "Immortal Presence", "Vampiric Aura", "Shadow Strike", "Dark Seduction", "Blood Pact", "Mist Form", "Blood Frenzy", "Summon Bats", "Night Stalker", "Immortal Regeneration", "Crimson Fury", "Charm of the Undead", "Blood Ritual", "Shadow Dash", "Nightwalker", "Hypnotic Gaze", "Vampire's Thrall"],
     "Berserker": ["Total Immunity", "Rage Unleashed", "Bloodlust", "Frenzied Strikes", "Battle Roar", "Relentless Assault", "Fearless Charge", "Savage Blow", "Battle Frenzy", "Bloodthirst", "Weapon Smash", "War Cry", "Unstoppable Force", "Rampage", "Critical Strike", "Battlefield Fury", "Rage Recovery", "Adrenaline Surge", "Destruction Wave", "Uncontrolled Rage", "Death Rage"],
@@ -62,10 +62,11 @@ const roleSkills = {
     "Scout": ["Total Immunity", "Keen Eye", "Ambush", "Tracking", "Silent Step", "Sniper Shot", "Camouflage", "Hawk’s Vision", "Quick Shot", "Evasion", "Trap Mastery", "Trailblazer", "Agility Boost", "Escape Artist", "Deadly Aim", "Stealth Tactics", "Bow Mastery", "Terrain Mastery", "Survivalist", "Vantage Point", "Reconnaissance"],
     "Runesmith": ["Total Immunity", "Rune Crafting", "Weapon Inscription", "Armor Engraving", "Rune Empowerment", "Magic Infusion", "Rune of Fire", "Rune of Frost", "Rune of Protection", "Mystic Inscription", "Arcane Engravings", "Rune of Lightning", "Rune of Life", "Stone Rune", "Empowered Glyphs", "Rune Channeling", "Spirit Binding", "Rune of Destruction", "Mystic Warding", "Rune of Clarity", "Enchantment Mastery"],
     "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"],
-    "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"]
+    "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"],
+    "Artillerist": ["Total Immunity", "Barrage Fire", "Rocket Artillerist", "Long-Range Shells", "Minengeschoss", "Precision Fire", "Rapid Fire", "Precise Aim", "Sustainable Firing", "Hit and Run", "Overconsumption"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
-const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch"];
+const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch", "Chronos"];
 const titles = {
     "Knight": ["Champion of Light", "Guardian of the Realm", "Master of Arms", "Sword Guardian", "Defender of the Weak", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Mage": ["Master of Elements", "Arcane Scholar", "Stormcaller", "Elemental Weaver", "Mystic of the Arcane", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
@@ -107,7 +108,8 @@ const titles = {
     "Scout": ["Pathfinder of the Wild", "Master Tracker", "Seeker of Secrets", "Ranger of the Unknown", "Warden of the Wilds", "Lightfoot", "Silent Watcher", "Tracker of Beasts", "Explorer of Realms", "Wilderness Wanderer", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Runesmith": ["Master of Runes", "Carver of Magic", "Wielder of Ancient Symbols", "Runewright", "Smith of Power", "Crafter of Enchantment", "Runescribe", "Bearer of Magical Symbols", "Runeforge Master", "Lord of the Runes"],
     "Champion": ["Hero of the People", "Guardian of the Realm", "Sword of Victory", "Master of the Arena", "Warlord of Glory", "Victor of the Colosseum", "Lord of Triumph", "Conqueror of Realms", "Battle Champion", "Champion of Legends", "Great War Participant - Winning Side"],
-    "Panzertruppe": ["Panzer Ace", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
+    "Panzertruppe": ["Panzer Ace", "Anti-Aircraft Warfare Specialist", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
+    "Artillerist": ["Infantry's Best Friend", "Clear Sky", "Plane Downer", "Tanker's Nightmare", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
 };
 const roleWeapon = {
     "Knight": ["Heavy Sword", "Short Sword", "Sword and Shield", "Spear", "Club", "Bat"],
@@ -149,6 +151,20 @@ const roleWeapon = {
     "Dark Knight": ["Dark Heavy Sword", "Dark Short Sword", "Spear", "Club", "Bat", "Quickslash Sword of Darkness"],
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
     "Runesmith": ["Book of Rune"],
-    "Panzertruppe": ["Light Tank", "Tankette", "Assault Gun", "Tank Destroyer", "Medium Tank", "Self-Propelled Anti-Aircraft vehicle", "Heavy Tank", "Super Heavy Tank", "Land Battleship", "Main Battle Tank"]
+    "Panzertruppe": ["Light Tank", "Tankette", "Self-Propelled Gun", "Medium Tank", "Self-Propelled Anti-Aircraft Vehicle", "Heavy Tank", "Super Heavy Tank", "Land Battleship", "Main Battle Tank", "Infantry Fighting Vehicle"],
+    "Artillerist": ["Anti-Air Gun", "Multirole Cannon", "Anti-Tank Gun", "Howitzer"]
 };
-export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles}
+const tankVariants = {
+    "PSHT": {
+        "Light Tank": ["T-18", "T-26", "T-50", "T-60", "T-70", "PT-76", "BT-5", "BT-7", "RBT-5", ], 
+        "Tankette": ["T-27"], 
+        "Self-Propelled Gun": ["SU-76", "SU-85", "SU-100", "SU-122", "SU-152", "ISU-122", "ISU-152"], 
+        "Medium Tank": ["T-28", "T-34", "T-34-85", "T-44", "T-54/55"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["ZSU-37", "ZSU-37-2", "ZSU-57-2"],
+        "Heavy Tank": ["KV-1", "KV-2", "IS-85/IS-1", "IS-2", "IS-3", "IS-4", "T-10"],
+        "Land Battleship": ["T-35"],
+        "Main Battle Tank": [],
+        "Infantry Fighting Vehicle": []
+    },
+};
+export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants}
