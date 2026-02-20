@@ -131,6 +131,20 @@ function submitName() {
             document.getElementById("SecondRole").style.display = "none";
         }
 
+        if(role == "Flying Ace" || role == "Panzertruppe"){
+            document.getElementById("specialVehicle").style.display = "block";
+        }
+        else{
+            document.getElementById("specialVehicle").style.display = "none";
+        }
+
+        if (role == "Artillerist") {
+            document.getElementById("artilleryPiece").style.display = "block";
+        }
+        else{
+            document.getElementById("artilleryPiece").style.display = "none";
+        }
+
         //Band score for ability and title
         const F_score = 1;
         const E_score = 5;

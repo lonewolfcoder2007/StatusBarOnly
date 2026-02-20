@@ -1,24 +1,11 @@
 const roles = [
-    "Knight", "Mage", "Rogue", "Archer", "Paladin", "Blacksmith", "Healer", "Assassin", "Saint", "Tamer",
-    "Necromancer", "Unknown", "Death Knight", "Farmer", "Demon King", "Swordman", "Magic Swordman",
-    "Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire",
-    "Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord",
-    "Warrior", "Summoner", "Witch Hunter", "Dark Knight",
-    "Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "Panzertruppe", "Artillerist"
+    "Knight", "Mage", "Rogue", "Archer", "Paladin", "Blacksmith", "Healer", "Assassin", "Saint", "Tamer","Necromancer", "Unknown", "Death Knight", "Farmer", "Demon King", "Swordman", "Magic Swordman","Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire","Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord","Warrior", "Summoner", "Witch Hunter", "Dark Knight","Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "Panzertruppe", "Military Pilot", "Warsip Captain"
 ];
 const races = [
-    "Human", "Elf", "Dwarf", "Orc", "Beast", "Dark Elf", "Dragon", "Half Dragon", "Half Elf", "Demon",
-    "Werewolf", "Succubus", "Divine Being", "Feline", "Frogman", "Lizardman", "Slime", "Jawir",
-    "Sarkaz", "Liberi", "Sankta", "Deer", "Fishman", "Unknown", "Vampire", "Phoenix", "Giant", "Fairy", "Merfolk", "Gnome", "Troll", "Gargoyle", "Zombie", "Skeleton", "Harpy", "Minotaur", "Djinn", "Centaur", "Cyclops", "Satyr", "Dryad", "Spirit", "Naga", "Undead",
-    "Goblin", "Elemental", "Chimera", "Griffin", "Treant", "Yeti", "Ogre"
+    "Human", "Elf", "Dwarf", "Orc", "Beast", "Dark Elf", "Dragon", "Half Dragon", "Half Elf", "Demon", "Werewolf", "Succubus", "Divine Being", "Feline", "Frogman", "Lizardman", "Slime", "Jawir", "Sarkaz", "Liberi", "Sankta", "Deer", "Fishman", "Unknown", "Vampire", "Phoenix", "Giant", "Fairy", "Merfolk", "Gnome", "Troll", "Gargoyle", "Zombie", "Skeleton", "Harpy", "Minotaur", "Djinn", "Centaur", "Cyclops", "Satyr", "Dryad", "Spirit", "Naga", "Undead", "Goblin", "Elemental", "Chimera", "Griffin", "Treant", "Yeti", "Ogre"
 ];
 const regions = [
-    "LowRess Kingdom", "Liberia", "Great Forest", "Heavenhold", "Kingdom of Erusea", "Soviet Republics",
-    "Drakenfell Mountains", "Evershade Isles", "Frostspire Tundra", "Ashenmoor Wastes", "Valoria",
-    "Silverpeak Highlands", "Thornwood Vale", "Eldergrove", "Blackwater Marsh", "Suncrest Plains",
-    "Ironcliff Bastion", "Whispering Sands", "Starlight Hollow", "Glimmerfall Cove", "Shadowfen Swamp",
-    "Stormveil Coast", "Crimson Hollow", "Verdantwild", "Obsidian Flats", "Azurelake Shores",
-    "Emberstone Citadel", "Duskmire Reach", "Wildthorn Expanse", "Goldenleaf Glade", "Ivoryspire City"
+    "LowRess Kingdom", "Liberia", "Great Forest", "Heavenhold", "Kingdom of Erusea", "Soviet Republics", "Drakenfell Mountains", "Evershade Isles", "Frostspire Tundra", "Ashenmoor Wastes", "Valoria", "Silverpeak Highlands", "Thornwood Vale", "Eldergrove", "Blackwater Marsh", "Suncrest Plains", "Ironcliff Bastion", "Whispering Sands", "Starlight Hollow", "Glimmerfall Cove", "Shadowfen Swamp", "Stormveil Coast", "Crimson Hollow", "Verdantwild", "Obsidian Flats", "Azurelake Shores", "Emberstone Citadel", "Duskmire Reach", "Wildthorn Expanse", "Goldenleaf Glade", "Ivoryspire City", "Osea Federation", "Yuktovania Republics"
 ];
 const roleSkills = {
     "Knight": ["Sword Mastery", "Shield Mastery", "Mounted Combat", "War Cry", "Heavy Armor", "Tactical Strategy", "Battle Charge", "Shield Bash", "Combat Reflexes", "Defensive Stance", "Sword Block", "Battlefield Awareness", "Parry", "Shield Slam", "Armor Reinforcement", "Toughness", "Sword Precision", "Holy Vow", "Defender's Resolve", "Battle Endurance", "Total Immunity"],
@@ -57,16 +44,17 @@ const roleSkills = {
     "Monk": ["Total Immunity", "Chi Mastery", "Meditation", "Palm Strike", "Iron Fist", "Serene Mind", "Tiger Claw", "Pressure Point", "Swift Movement", "Chi Shield", "Inner Strength", "Spiritual Awareness", "Energy Channeling", "Keen Reflexes", "Healing Meditation", "Chi Burst", "Mystic Harmony", "Whirling Kick", "Fist of Fury", "Evasion", "Focused Breathing"],
     "Vampire Lord": ["Total Immunity", "Blood Drain", "Bat Transformation", "Night Vision", "Immortal Presence", "Vampiric Aura", "Shadow Strike", "Dark Seduction", "Blood Pact", "Mist Form", "Blood Frenzy", "Summon Bats", "Night Stalker", "Immortal Regeneration", "Crimson Fury", "Charm of the Undead", "Blood Ritual", "Shadow Dash", "Nightwalker", "Hypnotic Gaze", "Vampire's Thrall"],
     "Summoner": ["Total Immunity", "Summon Beast", "Arcane Summoning", "Summon Elemental", "Summon Golem", "Mana Channeling", "Familiar Mastery", "Summon Phoenix", "Spirit Bond", "Summon Doppelganger", "Ethereal Binding", "Summon Undead", "Mana Surge", "Summon Hydra", "Soul Link", "Summon Titan", "Elemental Convergence", "Arcane Familiar", "Conjure Guardian", "Planar Rift", "Summon Chimera"],
-    "Witch Hunter": ["Total Immunity", "Dark Detection", "Purifying Flame", "Holy Shot", "Hunter's Mark", "Silver Bullets", "Dark Magic Nullification", "Curse Breaking", "Demonbane", "Vampire Slayer", "Purity of Will", "Mystic Ward", "Crossbow Mastery", "Exorcism", "Hunter’s Reflexes", "Witch’s Bane", "Trap Mastery", "Evil Scent", "Divine Smite", "Shadow Purge", "True Sight"],
+    "Witch Hunter": ["Total Immunity", "Dark Detection", "Purifying Flame", "Holy Shot", "Hunter's Mark", "Silver Bullets", "Dark Magic Nullification", "Curse Breaking", "Demonbane", "Vampire Slayer", "Purity of Will", "Mystic Ward", "Crossbow Mastery", "Exorcism", "Hunter’s Reflexes", "Witch's Bane", "Trap Mastery", "Evil Scent", "Divine Smite", "Shadow Purge", "True Sight"],
     "Dark Knight": ["Total Immunity", "Shadow Strike", "Death Blade", "Dark Aura", "Nightmare Slash", "Soul Corruption", "Void Edge", "Unholy Strength", "Vampiric Touch", "Fell Cleave", "Shadow Barrier", "Blackened Blade", "Dark Shield", "Abyssal Wrath", "Soul Drain", "Grim Resolve", "Spectral Slash", "Voidwalker", "Dread Charge", "Cursed Armor", "Siphon Life"],
-    "Scout": ["Total Immunity", "Keen Eye", "Ambush", "Tracking", "Silent Step", "Sniper Shot", "Camouflage", "Hawk’s Vision", "Quick Shot", "Evasion", "Trap Mastery", "Trailblazer", "Agility Boost", "Escape Artist", "Deadly Aim", "Stealth Tactics", "Bow Mastery", "Terrain Mastery", "Survivalist", "Vantage Point", "Reconnaissance"],
+    "Scout": ["Total Immunity", "Keen Eye", "Ambush", "Tracking", "Silent Step", "Sniper Shot", "Camouflage", "Hawk's Vision", "Quick Shot", "Evasion", "Trap Mastery", "Trailblazer", "Agility Boost", "Escape Artist", "Deadly Aim", "Stealth Tactics", "Bow Mastery", "Terrain Mastery", "Survivalist", "Vantage Point", "Reconnaissance"],
     "Runesmith": ["Total Immunity", "Rune Crafting", "Weapon Inscription", "Armor Engraving", "Rune Empowerment", "Magic Infusion", "Rune of Fire", "Rune of Frost", "Rune of Protection", "Mystic Inscription", "Arcane Engravings", "Rune of Lightning", "Rune of Life", "Stone Rune", "Empowered Glyphs", "Rune Channeling", "Spirit Binding", "Rune of Destruction", "Mystic Warding", "Rune of Clarity", "Enchantment Mastery"],
     "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"],
     "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"],
-    "Artillerist": ["Total Immunity", "Barrage Fire", "Rocket Artillerist", "Long-Range Shells", "Minengeschoss", "Precision Fire", "Rapid Fire", "Precise Aim", "Sustainable Firing", "Hit and Run", "Overconsumption", "Infantry Suppression"]
+    "Military Pilot": ["Air Superiority", "Bomber Hunter", "Fighter Hunter", "Night Fighter Expert", "Man and Machine Harmony", "Enhanced Awareness", "Top Gun Graduate", "Supermaneuverability", "Daredevil Flying", "Infantry's Best Friend", "Close Air Support Specialist", "Supercruising"],
+    "Warship Captain": ["Silent Running", "Iron Fist", "Wolfpack", "High Sea Sailor", "Anti-Submarine Specialist"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
-const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Mariners", "Yankees", "Killswitch", "Chronos"];
+const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Snowdwellers", "Yankees", "Killswitch", "Chronos"];
 const titles = {
     "Knight": ["Champion of Light", "Guardian of the Realm", "Master of Arms", "Sword Guardian", "Defender of the Weak", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Mage": ["Master of Elements", "Arcane Scholar", "Stormcaller", "Elemental Weaver", "Mystic of the Arcane", "Anomaly", "Noob", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
@@ -97,7 +85,7 @@ const titles = {
     "Pirate": ["Captain of the Seas", "Sea Rover", "Lord of the Ocean", "Buccaneer King", "Ruler of the Waves", "Master of the High Seas", "Ocean Raider", "Corsair Champion", "Scourge of the Waters", "Seafaring Marauder"],
     "Priest": ["Blessed Cleric", "Voice of the Divine", "Keeper of Faith", "Holy Shepherd", "Bearer of Grace", "Soul Keeper", "Divine Intercessor", "Servant of the Light", "Harbinger of the Sacred", "Guardian of the Faithful"],
     "Alchemist": ["Master of Transmutation", "Potion Master", "Crafter of Elixirs", "Herbalist of the Realms", "Arcane Chemist", "Wielder of Elements", "Mixer of Potions", "Catalyst of Change", "Enchanter of Potions", "Alchemical Sage"],
-    "Ranger": ["Warden of the Wilds", "Guardian of Nature", "Tracker of Beasts", "Forest Wanderer", "Nature’s Protector", "Hunter of the Wild", "Beast Seeker", "Woodsman of the Realm", "Pathfinder", "Wilds Keeper", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
+    "Ranger": ["Warden of the Wilds", "Guardian of Nature", "Tracker of Beasts", "Forest Wanderer", "Nature's Protector", "Hunter of the Wild", "Beast Seeker", "Woodsman of the Realm", "Pathfinder", "Wilds Keeper", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Army Ranger": ["Infilltration", "Slient Hunter", "Survival Expert", "Grenade Specialist", "Jungle Warfare Expert", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Samurai": ["Warrior of Honor", "Master of the Katana", "Bushido Blade", "Sword of Honor", "Lord of the Katana", "Disciple of Bushido", "Master of the Sword", "Ronin of Valor", "Keeper of the Code", "Blade of Honor", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Monk": ["Disciple of Peace", "Master of Tranquility", "Fist of the Ancients", "Silent Guardian", "Wanderer of Virtue", "Keeper of Balance", "Mystic Warrior", "Guardian of Serenity", "Devout of the Spirit", "Master of Harmony"],
@@ -109,7 +97,7 @@ const titles = {
     "Runesmith": ["Master of Runes", "Carver of Magic", "Wielder of Ancient Symbols", "Runewright", "Smith of Power", "Crafter of Enchantment", "Runescribe", "Bearer of Magical Symbols", "Runeforge Master", "Lord of the Runes"],
     "Champion": ["Hero of the People", "Guardian of the Realm", "Sword of Victory", "Master of the Arena", "Warlord of Glory", "Victor of the Colosseum", "Lord of Triumph", "Conqueror of Realms", "Battle Champion", "Champion of Legends", "Great War Participant - Winning Side"],
     "Panzertruppe": ["Panzer Ace", "Anti-Aircraft Warfare Specialist", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
-    "Artillerist": ["Infantry's Best Friend", "Clear Sky", "Plane Downer", "Tanker's Nightmare", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
+    "Military Pilot": ["The Three Strikes", "Mister X", "The Demon Lord of the Round Table", "The Red Baron", "The Grim Reaper", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
 };
 const roleWeapon = {
     "Knight": ["Heavy Sword", "Short Sword", "Sword and Shield", "Spear", "Club", "Bat"],
@@ -152,7 +140,7 @@ const roleWeapon = {
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
     "Runesmith": ["Book of Rune"],
     "Panzertruppe": ["Light Tank", "Tankette", "Self-Propelled Gun", "Medium Tank", "Self-Propelled Anti-Aircraft Vehicle", "Heavy Tank", "Super Heavy Tank", "Main Battle Tank", "Infantry Fighting Vehicle/Armor Support Vehicle", "Armored Personnel Carrier"],
-    "Artillerist": ["Anti-Air Gun", "Multirole Cannon", "Anti-Tank Gun", "Howitzer"]
+    "Military Pilot": ["Fighter", "Heavy Fighter", "Multirole Fighter", "Light Bomber", "Medium Bomber", "Heavy Bomber", "Reconnaissance Aircraft"]
 };
 const tankVariants = {
     "PSHT": {
@@ -172,170 +160,200 @@ const tankVariants = {
         "Tankette": ["Type 94", "Type 97 Te-Ke"],
         "Self-Propelled Gun": ["Ro-Go", "Ho-Ro",, "Chi-Ha LG", "Ho-Ni I", "Ho-Ni III", "Na-To", "Type 99", "Ho-Ri", "Type 60 SPRG", "Type 75 SPH"],
         "Medium Tank": ["Ka-Chi", "Chi-He", "Ho-I", "Chi-Ha", "Chi-Ha Kai", "Chi-Nu", "Chi-To", "Chi-Ri"],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
+        "Self-Propelled Anti-Aircraft Vehicle": ["Ta-Se", "So-Ki", "Type 87", "Type 93"],
+        "Heavy Tank": ["Ro-Go", "Pz.Kpfw VI 'Tiger I'"],
+        "Super Heavy Tank": ["O-I"],
         "Main Battle Tank": ["Type 61", "Type 74", "Type 90", "Type 10"],
         "Infantry Fighting Vehicle/Armor Support Vehicle": ["Type 24 ICV", "Type 87 RCV", "Type 89"],
-        "Armored Personnel Carrier": ["Type 63","Type 70"]
+        "Armored Personnel Carrier": ["Type 63", "Type 70"]
     },
     "Silverthorn": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["AMC.34", "FCM.36", "H.35", "H.39", "R.35", "AMX-13", "E.B.R.", "AMX-10RC"],
+        "Tankette": ["AMD.35", "AML-90", "EBRC Jaguar"],
+        "Self-Propelled Gun": ["AMR.35 ZT3", "Lorraine 37L", "SAu 40", "AuF1"],
+        "Medium Tank": ["D2", "S.35"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["AMX-13 DCA 40", "TPK 6.41", "CCKW 353 AA", "AMX-30 S DCA", "Roland 1", "SANTAL"],
+        "Heavy Tank": ["AMX-50 Surblindé", "AMX-50 Surbaissé", "Char B1", "ARL-44"],
+        "Super Heavy Tank": ["Char 2C bis"],
+        "Main Battle Tank": ["AMX-30", "Leopard 2", "Leclerc MBT"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["VBCI"],
+        "Armored Personnel Carrier": ["VAB"]
     },
     "Dragonshade": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["A13 Cruiser", "A15 Crusader", "Scimitar", "VFM5"],
+        "Tankette": ["Tetrach I", "Daimler Mk II", "Harry Hopkins I", "Fox"],
+        "Self-Propelled Gun": ["Alecto Mk.I", "Archer", "Tortoise"],
+        "Medium Tank": ["Cromwell I", "Cromwell V", "Valentine I", "Valentine IX", "Valentine XI", "A30 Challenger", "A30 SP Avenger", "Comet I", "Centurion"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["Light AA Mk I", "Crusader AA Mk I", "Crusader AA Mk II", "Tracked Rapier", "Stormer AD"],
+        "Heavy Tank": ["Matilda III", "Churchill", "Conqueror", "Caernarvon"],
+        "Super Heavy Tank": ["Independent", "TOG II"],
+        "Main Battle Tank": ["Vickers Mk.1", "Chieftain", "Vickers Mk.3", "Challenger 2"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["FV510 Warrior", "Ajax"],
+        "Armored Personnel Carrier": ["FV432", "Ocelot", "FV103 Spartan", "Humber Pig", "Saxon"]
     },
     "Shadowspire": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["L6/40", "M11/39", "AUBL/74", "C13 T90", "Centauro I 105"],
+        "Tankette": ["AB 41", "L3/33 CC"],
+        "Self-Propelled Gun": ["47/32 L40", "Breda 501", "90/53 M41M"],
+        "Medium Tank": ["M13/40"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["CM52", "SIDAM 25"],
+        "Heavy Tank": ["Pz.Kpfw VI 'Tiger I'"],
+        "Super Heavy Tank": [null],
+        "Main Battle Tank": ["OF-40", "Ariete"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["VBC (PT2)", "VCC-80/60", "Dardo", "Freccia", "VCC-80/30"],
+        "Armored Personnel Carrier": ["FIAT 6614"]
     },
     "El Gasing": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["Pz.Kpfw 35(t)", "Pz.Kpfw 38(t)", "Pz.Kpfw II", "Sd.Kfz.234/2", "DF105", "PUMA"],
+        "Tankette": ["Sd.Kfz. 140/1", "Sd.Kfz.221 (s.Pz.B.41)", "Luchs A2", "Sd.Kfz.222"],
+        "Self-Propelled Gun": ["Panzerjäger I", "StuG III", "Sd.Kfz.234/3", "Sd.Kfz.251/10", "Sturmpanzer II 'Bison'", "Marder III", "Dicker Max", "Sturer Emil", "StuH 42", "Jagdpanzer 38(t) 'Hetzer'", "Jagdpanzer IV", "Nashorn", "Panzer IV/70", "Sd.Kfz.234/4", "8,8 cm Flak 37 Sfl.", "Sturmpanzer IV Brummbär", "VFW", "JPz 4-5", "Jagdpanther G1", "Jagdtiger", "Ferdinand", "PzH 2000"],
+        "Medium Tank": ["Pz.Kpfw III Ausf. E", "Pz.Kpfw III Ausf. N", "Pz.Kpfw IV Ausf. F1", "Pz.Kpfw IV Ausf. H", "Panther"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["Flakpanzer 38", "Flakpanzer I", "Sd.Kfz.222", "Sd.Kfz. 6/2", "Sd.Kfz.251/21", "Flakpanzer IV 'Ostwind'", "Flakpanzer IV 'Wirbelwind'", "Wiesel 1A4", "Gepard", "Ozelot", "FlaRakPz 1", "FlaRakRad"],
+        "Heavy Tank": ["Pz.Kpfw VI 'Tiger I'", "Pz,Kpfw Tiger Ausf. B 'Tiger II'"],
+        "Super Heavy Tank": ["E-100", "Maus"],
+        "Main Battle Tank": ["Leopard 1", "Leopard 2"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["SPz 12-3 LGS", "Marder", "Sd.Kfz.251/9", "Wiesel 1A2"],
+        "Armored Personnel Carrier": ["Boxer MGS", "Raketenautomat"]
     },
-    "Mariners": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+    "Snowdwellers": {
+        "Light Tank": ["Strv m/31", "Strv m/38", "Strv m/40L", "Strv 74", "CV 90105 TML", ],
+        "Tankette": ["Pbil m/40"],
+        "Self-Propelled Gun": ["Ikv 72", "Sav m/43", "Bkan 1C"],
+        "Medium Tank": ["Ikv 73", "Strv m/42"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["VEAK 40", "ASRAD-R", "Lvkv 9040C", "EldE 98"],
+        "Heavy Tank": ["Pz.Kpfw Tiger Ausf. B 'Tiger II'(P)"],
+        "Super Heavy Tank": [null],
+        "Main Battle Tank": ["Strv 101", "Strv 103", "Strv 81", "Strv 122"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["Pbv 501", "Ikv 91", "Strf 9040B", "CV 90 Mk.IV", "Pbv 301"],
+        "Armored Personnel Carrier": ["Pbv 302"]
     },
     "Yankees": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["M22 Locust", "M2A4", "M3 Stuart", "M24 Chaffee", "M5 Stuart", "M41 Walker Bulldog", "M551 Sheridan", "Stingray", "M1128"],
+        "Tankette": ["M2A2", "M8 LAC", "T18E2"],
+        "Self-Propelled Gun": ["M18 GMC 'Hellcat'", "M3 GMC", "M8 HMC", "M10 GMC 'Wolverine'", "M36 GMC", "M44", "M55", "M109A1 Paladin", "M50", "M56 Scorpion"],
+        "Medium Tank": ["M3 Lee", "M4 Sherman", "M26 Pershing", "M47 Patton II", "M48A1 Patton"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["M13 MGMC", "M15 CGMC", "M19A1 MGMC", "M42 Duster", "M163 VADS", "M247 Sergeant York DIVAD", "Imp.Chaparral", "LAV-AD"],
+        "Heavy Tank": ["T26E5", "M103"],
+        "Super Heavy Tank": ["T95"],
+        "Main Battle Tank": ["M60", "M1 Abrams"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["LVT(A)", "M3 Bradley"],
+        "Armored Personnel Carrier": ["M3 Bradley"]
     },
     "Killswitch": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Light Tank": ["Bardelas/60mm HVMS"],
+        "Tankette": [null],
+        "Self-Propelled Gun": ["Rochev"],
+        "Medium Tank": ["Tiran 4", "Sabra Mk.I"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["Hovet", "TCM-20", "SPYDER", "Machbet"],
+        "Heavy Tank": [null],
+        "Super Heavy Tank": [null],
+        "Main Battle Tank": ["Gal Batash", "Tiran 6", "Merkava"],
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["Namer Tsrikhon"],
+        "Armored Personnel Carrier": ["Namer 30", "Namer Tsrikhon"]
     },
     "Chronos": {
-        "Light Tank": [],
-        "Tankette": [],
-        "Self-Propelled Gun": [],
+        "Light Tank": ["Type 62", "Type 63"],
+        "Tankette": ["PTL02"],
+        "Self-Propelled Gun": ["PLZ83", "PLZ05", ],
         "Medium Tank": [],
         "Self-Propelled Anti-Aircraft Vehicle": [],
         "Heavy Tank": [],
         "Super Heavy Tank": [],
         "Main Battle Tank": [],
-        "Infantry Fighting Vehicle/Armor Support Vehicle/Armor Support Vehicle": [],
-        "Armored Personnel Carrier": []
+        "Infantry Fighting Vehicle/Armor Support Vehicle": ["ZBD86", "CM34", "QN506", "ZBD04A", "ZLT11"],
+        "Armored Personnel Carrier": ["WZ551"]
     }
 };
-const artilleryVariant = {
+const aircraftVariants = {
     "PSHT": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "RHODES": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Silverthorn": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Dragonshade": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Shadowspire": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "El Gasing": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
-    "Mariners": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+    "Snowdwellers": {
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Yankees": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Killswitch": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     },
     "Chronos": {
-        "Anti-Air Gun": [],
-        "Multirole Cannon": [],
-        "Anti-Tank Gun": [],
-        "Howitzer": []
+        "Fighter": [],
+        "Heavy Fighter": [],
+        "Multirole Fighter": [],
+        "Light Bomber": [],
+        "Medium Bomber": [],
+        "Heavy Bomber": [],
+        "Reconnaissance Aircraft": []
     }
-};
-export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants, artilleryVariant}
+}
+export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants, aircraftVariants}
