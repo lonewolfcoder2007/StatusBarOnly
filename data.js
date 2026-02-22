@@ -1,5 +1,5 @@
 const roles = [
-    "Knight", "Mage", "Rogue", "Archer", "Paladin", "Blacksmith", "Healer", "Assassin", "Saint", "Tamer","Necromancer", "Unknown", "Death Knight", "Farmer", "Demon King", "Swordman", "Magic Swordman","Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire","Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord","Warrior", "Summoner", "Witch Hunter", "Dark Knight","Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "Panzertruppe", "Military Pilot", "Warsip Captain"
+    "Knight", "Mage", "Rogue", "Archer", "Paladin", "Blacksmith", "Healer", "Assassin", "Saint", "Tamer","Necromancer", "Unknown", "Death Knight", "Farmer", "Demon King", "Swordman", "Magic Swordman","Martial Artist", "Trader", "Archmage", "Slave", "Chef", "Rifleman", "Sapper", "Vampire","Berserker", "Bard", "Pirate", "Priest", "Alchemist", "Ranger", "Army Ranger", "Samurai", "Monk", "Vampire Lord","Warrior", "Summoner", "Witch Hunter", "Dark Knight","Inquisitor", "Scout", "Lancer", "Runesmith", "Champion", "Panzertruppe", "Military Pilot"
 ];
 const races = [
     "Human", "Elf", "Dwarf", "Orc", "Beast", "Dark Elf", "Dragon", "Half Dragon", "Half Elf", "Demon", "Werewolf", "Succubus", "Divine Being", "Feline", "Frogman", "Lizardman", "Slime", "Jawir", "Sarkaz", "Liberi", "Sankta", "Deer", "Fishman", "Unknown", "Vampire", "Phoenix", "Giant", "Fairy", "Merfolk", "Gnome", "Troll", "Gargoyle", "Zombie", "Skeleton", "Harpy", "Minotaur", "Djinn", "Centaur", "Cyclops", "Satyr", "Dryad", "Spirit", "Naga", "Undead", "Goblin", "Elemental", "Chimera", "Griffin", "Treant", "Yeti", "Ogre"
@@ -50,8 +50,7 @@ const roleSkills = {
     "Runesmith": ["Total Immunity", "Rune Crafting", "Weapon Inscription", "Armor Engraving", "Rune Empowerment", "Magic Infusion", "Rune of Fire", "Rune of Frost", "Rune of Protection", "Mystic Inscription", "Arcane Engravings", "Rune of Lightning", "Rune of Life", "Stone Rune", "Empowered Glyphs", "Rune Channeling", "Spirit Binding", "Rune of Destruction", "Mystic Warding", "Rune of Clarity", "Enchantment Mastery"],
     "Champion": ["Total Immunity", "Heroic Strike", "Battle Charge", "Defensive Posture", "War Cry", "Shield Bash", "Mighty Cleave", "Roar of the Champ", "Battle Endurance", "Overpower", "Critical Blow", "Tactical Defense", "Rallying Cry", "Victory Rush", "Stalwart Defense", "Unyielding Strength", "Shield Mastery", "Battlefield Domination", "Power Slam", "Warrior's Wrath"],
     "Panzertruppe": ["Total Immunity", "Mechanical Repairing", "Deadeye", "Tank Commander", "Precise Aim", "Overloader", "War Machine", "Panzer Ace", "King of the Battlefield", "The Future of Combat"],
-    "Military Pilot": ["Air Superiority", "Bomber Hunter", "Fighter Hunter", "Night Fighter Expert", "Man and Machine Harmony", "Enhanced Awareness", "Top Gun Graduate", "Supermaneuverability", "Daredevil Flying", "Infantry's Best Friend", "Close Air Support Specialist", "Supercruising"],
-    "Warship Captain": ["Silent Running", "Iron Fist", "Wolfpack", "High Sea Sailor", "Anti-Submarine Specialist"]
+    "Military Pilot": ["Air Superiority", "Bomber Hunter", "Fighter Hunter", "Night Fighter Expert", "Man and Machine Harmony", "Enhanced Awareness", "Top Gun Graduate", "Supermaneuverability", "Daredevil Flying", "Infantry's Best Friend", "Close Air Support Specialist", "Supercruising", "Expert Cargo Handler", "Quick Delivery", "Accurate Airdropping", "Sky Keeper", "SkyEye"]
 };
 const ranks = ["F", "E", "D", "C", "B", "A", "S", "SS", "SSS"];
 const guilds = ["PSHT", "RHODES", "Silverthorn", "Dragonshade", "Shadowspire", "El Gasing", "Snowdwellers", "Yankees", "Killswitch", "Chronos"];
@@ -96,8 +95,8 @@ const titles = {
     "Scout": ["Pathfinder of the Wild", "Master Tracker", "Seeker of Secrets", "Ranger of the Unknown", "Warden of the Wilds", "Lightfoot", "Silent Watcher", "Tracker of Beasts", "Explorer of Realms", "Wilderness Wanderer", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
     "Runesmith": ["Master of Runes", "Carver of Magic", "Wielder of Ancient Symbols", "Runewright", "Smith of Power", "Crafter of Enchantment", "Runescribe", "Bearer of Magical Symbols", "Runeforge Master", "Lord of the Runes"],
     "Champion": ["Hero of the People", "Guardian of the Realm", "Sword of Victory", "Master of the Arena", "Warlord of Glory", "Victor of the Colosseum", "Lord of Triumph", "Conqueror of Realms", "Battle Champion", "Champion of Legends", "Great War Participant - Winning Side"],
-    "Panzertruppe": ["Panzer Ace", "Anti-Aircraft Warfare Specialist", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
-    "Military Pilot": ["The Three Strikes", "Mister X", "The Demon Lord of the Round Table", "The Red Baron", "The Grim Reaper", "Great War Participant - Winning Side", "Great War Participant - Losing Side"]
+    "Panzertruppe": ["Panzer Ace", "Anti-Aircraft Warfare Specialist", "Tank Warfare Specialist", "Kommandant", "Destroyer of Battlefield", "Russian Bias", "Infantry Support Specialist", "Camouflage Expert", "Urban Warfare Specialist", "Airborne Cleaner", "Black Baron", "Fresh off the Academy", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
+    "Military Pilot": ["The Three Strikes", "Mister X", "The Demon Lord of the Round Table", "The Red Baron", "The Grim Reaper", "The Black Devil", "Flying Knight of the Northland", "The Mad Major", "Bad Omen", "Black Baron", "Mr. Murderer", "Infantry's Friend", "Die Zerstörer", "Fresh off the Academy", "The Silver Fox", "Cargo Hauler", "No Where to Hide", "Radar Operator Specialist", "Cargo Plane Expert", "Cargo Tender", "Long Caster", "Great War Participant - Winning Side", "Great War Participant - Losing Side"],
 };
 const roleWeapon = {
     "Knight": ["Heavy Sword", "Short Sword", "Sword and Shield", "Spear", "Club", "Bat"],
@@ -107,7 +106,7 @@ const roleWeapon = {
     "Paladin": ["Heavy Sword", "Short Sword", "Sword and Shield"],
     "Blacksmith": ["Hammer", "Anvil", "Pickaxe", "Shovel", "Axe"],
     "Healer": ["Staff of Cleanse", "Staff of Healing", "Staff of Regeneration", "Book of Healing"],
-    "Assasin": ["Katana", "Wakizashi", "Shuriken", "Daggers", "Sickle"],
+    "Assassin": ["Katana", "Wakizashi", "Shuriken", "Daggers", "Sickle"],
     "Saint": ["Unknown"],
     "Tamer": ["Bear", "Crocodile", "Dinosaur", "Elephant", "Tiger", "Leopard"],
     "Necromancer": ["Staff of Darkness", "Staff of Skull", "Femur", "Bone Staff", "Book of the Undead"],
@@ -130,7 +129,8 @@ const roleWeapon = {
     "Pirate": ["Flintlock Pistol", "Quickslash Sword", "Cannon", "Hook"],
     "Priest": ["None"],
     "Alchemist": ["None"],
-    "Ranger": ["Longbow", "Quick-fire Bow", "Elemental Bow", "Crossbow", "Daggers", "Short Sword", "Submachine Gun", "Revolver", "Pistol"],
+    "Ranger": ["Longbow", "Quick-fire Bow", "Elemental Bow", "Crossbow", "Daggers", "Short Sword"],
+    "Army Ranger": ["Submachine Gun", "Revolver", "Pistol", "Daggers", "Semi-Auto Rifle", "Bolt-Action Rifle"],
     "Samurai": ["Bajō-zutsu", "Bo-hiya", "Daishō", "Tanegashima", "Wakizashi", "Shuriken"],
     "Monk": ["Fists"],
     "Vampire Lord": ["Fangs", "Claws"],
@@ -140,7 +140,7 @@ const roleWeapon = {
     "Scout": ["Rifle", "Submachine Gun", "Pistol", "Dagger", "Short Sword", "Smoke Grenade", "Flare Gun"],
     "Runesmith": ["Book of Rune"],
     "Panzertruppe": ["Light Tank", "Tankette", "Self-Propelled Gun", "Medium Tank", "Self-Propelled Anti-Aircraft Vehicle", "Heavy Tank", "Super Heavy Tank", "Main Battle Tank", "Infantry Fighting Vehicle/Armor Support Vehicle", "Armored Personnel Carrier"],
-    "Military Pilot": ["Fighter", "Heavy Fighter", "Multirole Fighter", "Light Bomber", "Medium Bomber", "Heavy Bomber", "Reconnaissance Aircraft"]
+    "Military Pilot": ["Fighter", "Heavy Fighter", "Multirole Fighter/Fighter-Bomber", "Light Bomber", "Medium Bomber", "Heavy Bomber", "Reconnaissance Aircraft", "Helicopter", "Transport Plane/Refuelling Tanker", "Airborne Warning and Control System"]
 };
 const tankVariants = {
     "PSHT": {
@@ -254,106 +254,136 @@ const tankVariants = {
     "Chronos": {
         "Light Tank": ["Type 62", "Type 63"],
         "Tankette": ["PTL02"],
-        "Self-Propelled Gun": ["PLZ83", "PLZ05", ],
-        "Medium Tank": [],
-        "Self-Propelled Anti-Aircraft Vehicle": [],
-        "Heavy Tank": [],
-        "Super Heavy Tank": [],
-        "Main Battle Tank": [],
+        "Self-Propelled Gun": ["PLZ83", "PLZ05", "PTZ89 'Eastern Ferdinand'"],
+        "Medium Tank": ["Type 59", "Type 69"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["ZSD63/PG87", "WZ305", "PGZ04A", "PGZ09", "HQ11", "HQ17", 'CS/SA5'],
+        "Heavy Tank": [null],
+        "Super Heavy Tank": [null],
+        "Main Battle Tank": ["ZTZ88", "ZTZ96", "VT4", "ZTZ99"],
         "Infantry Fighting Vehicle/Armor Support Vehicle": ["ZBD86", "CM34", "QN506", "ZBD04A", "ZLT11"],
         "Armored Personnel Carrier": ["WZ551"]
     }
 };
 const aircraftVariants = {
     "PSHT": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["I-153 M-62", "I-15", "I-16", "MiG-3", "La-5", "LaGG-3", "Yak-1", "Yak-7", "Yak-9", "La-7", "Yak-3", "La-9", "MiG-15", "Su-9", "MiG-17", "MiG-21", "MiG-23", "MiG-29", "Su-7"],
+        "Heavy Fighter": ["MiG-25", "MiG-31", "Su-27", "Su-33", "Pe-3", "Yak-2 KABB"],
+        "Multirole Fighter/Fighter-Bomber": ["Su-30", "Yak-38", "Su-17/Su-22", "Su-34", "Su-35", "Su-57"],
+        "Light Bomber/CAS": ["BB-1", "Il-2 Shturmovik", "Su-2", "Su-6", "Su-7", "Su-25", "Yak-4"],
+        "Medium Bomber": ["Su-24", "Ar-2", "SB 2M", "DB-3", "IL-4", "Yer-2", "Tu-2", "IL-28", "Tu-14", "Tu-16"],
+        "Heavy Bomber": ["TB-3M", "Pe-8", "Be-6", "Yak-28", "Tu-95", "Tu-160", "Tu-22"],
+        "Reconnaissance Aircraft": ["KOR-1", "Po-2", "Yak-4", "MiG-25"],
+        "Helicopter": ["Mi-24", "Mi-4", "Mi-8", "Ka-29", "Ka-50", "Ka-52", "Mi-28", "Mi-35"],
+        "Transport Plane/Refuelling Tanker": ["An-8", "An-12", "An-22", "An-26", "An-32", "Il-76", "An-124 'Ruslan'", "An-225 'Mriya'", "Il-78"],
+        "Airborne Warning and Control System": ["A-50", "Tu-126", "Ka-31"]
     },
     "RHODES": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["A5M", "Ki-27", "Ki-10", "Ki-43", "A6M 'Zero'", "Ki-44", "Ki-61 'Hien'", "N1K", "J2M", "Ki-100", "A7M2 'Reppu'", "J6K", "J7W", "Ki-84 'Hayate'", "Ki-87", "N1K1-J", "N1K2-J", "Ki-94", "Kikka", "T-2", "F1M"],
+        "Heavy Fighter": ["Ki-45", "J1N", "Ki-102", "J5N", "Ki-83", "Ki-45", ],
+        "Multirole Fighter/Fighter-Bomber": ["F-1", "F-15J", "F-2A Kai", "F-2A Super Kai"],
+        "Light Bomber/CAS": ["Ki-102", "E13A1", "B5N", "E7K", "E8N", "F1M", "Ki-32", "B6N 'Tenzan'", "D4Y 'Suisei'", "Ki-48", "B7A", "D3A"],
+        "Medium Bomber": ["Ki-21", "G3M", "G4M", "Ki-49", "P1Y1"],
+        "Heavy Bomber": ["H6K", "H8K", "G5N 'Shinzan'", "Ki-67", "G8N 'Renzan'"],
+        "Reconnaissance Aircraft": ["E7K", "E8N", "F1M", "Ki-46"],
+        "Helicopter": ["AH-1S", "AH-64DJP", "UH-1B"],
+        "Transport Plane/Refuelling Tanker": ["Ki-56", "Ki-57", "Ki-34", "Nakajima L2D", "Kawasaki C-1", "Kawasaki C-2", "KC-767"],
+        "Airborne Warning and Control System": ["Boeing E-767"]
     },
     "Silverthorn": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["D.371", "D.500", "H-75A", "M.B.151", "D.520", "M.S.410", "V.G.33", "NC.900", "M.D.450B Ouragan", "S.O.4050 Vautour", "Mirage IIIC"],
+        "Heavy Fighter": ["Potez 630"],
+        "Multirole Fighter/Fighter-Bomber": ["Super Mystere B2", "Mirage 2000", "Mirage 4000", "Rafale", "Jaguar"],
+        "Light Bomber/CAS": ["Br.693AB2", "Alpha Jet E", "Potez 633", "V-156-F", "LeO 451", "S.O.4050 Vautour II", ],
+        "Medium Bomber": ["F.222.2", "M.B.175", "S.O.4050 Vautour IIB"],
+        "Heavy Bomber": ["M.B.162"],
+        "Reconnaissance Aircraft": ["GL.832HY", "Loire 130"],
+        "Helicopter": ["H-34", "SA 313 'Alouette II'", "SA.341 'Gazelle'", "EC-665 'Tiger'"],
+        "Transport Plane/Refuelling Tanker": ["ATR 72", "A400M", "Bréguet 941", "C-160", "A330 MRTT 'Phénix'"],
+        "Airborne Warning and Control System": ["Boeing E-3 Sentry"],
     },
     "Dragonshade": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["Fury", "Gladiator", "Sea Gladiator", "Nimrod", "Boomerang", "Martlet", "Hurricane", "Sea Hurricane", "Spitfire", "Hellcat", "Typhoon", "Thunderbolt", "Seafire", "Sea Fury", "Tempest", "Meteor F", "Sea Venom", "Swift F", "Hunter F", "Javelin F.(A.W.)", "Lightning F"],
+        "Heavy Fighter": ["Whirlwind", "Hornet", "Phantom FGR.2", "Phantom FG.1", "Beaufighter", ],
+        "Multirole Fighter/Fighter-Bomber": ["Attacker FB", "Vampire F.B", "Hunter FGA", "Typhoon FGR.4", "F-35C", "Sea Harrier II", "Tornado F", "Brigand B 1", "Mosquito", "Harrier GR", "Hawk 200", "Jaguar", "Tornado"],
+        "Light Bomber/CAS": ["Swordfish", "Chesapeake", "Avenger", "Buccaneer S", "Firefly F"],
+        "Medium Bomber": ["Beaufort", "Blenheim", "Hampden", "Catalina", "Boston", "Hudson", "Havoc", "Wellington", "Wyvern S"],
+        "Heavy Bomber": ["Halifax", "Stirling", "Lancaster", "Lincoln", "Shackleton", "Canberra", "Vulcan"],
+        "Reconnaissance Aircraft": ["Walrus", "Osprey", "Hudson", "Sunderland"],
+        "Helicopter": ["Scout", "Wasp", "Lynx", "Chinook", "Jupiter HC.2"],
+        "Transport Plane/Refuelling Tanker": ["Lodestar", "Globemaster III", "Harrow", "Atlas", "Falcon 900", "Voyager"],
+        "Airborne Warning and Control System": ["Boeing E-7 Wedgetail"]
     },
     "Shadowspire": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["CR.32", "CR.42", "G.50", "Re.2000", "C. 202", "C. 200", "Re.2001", "G.55", "Re.2005", "C. 205", "CL-13", "G.91"],
+        "Heavy Fighter": ["F.C.20", "SM.91"],
+        "Multirole Fighter/Fighter-Bomber": ["F-2000A", "Tornado"],
+        "Light Bomber/CAS": ["Ba.65 (K.14) L", "MB-326K", "A-11 Ghibli"],
+        "Medium Bomber": ["F.C.20", "Breda 88", "B.R.20DR", "S.M.79", "S.81", "Z.1007 bis serie 5", ],
+        "Heavy Bomber": ["P.108A Artgliere"],
+        "Reconnaissance Aircraft": ["Ro.43", "Ro.44", "G.91"],
+        "Helicopter": ["AB 205", "A.109", "A129"],
+        "Transport Plane/Refuelling Tanker": ["Z.511", "Z.1011", "KC-767", "A400M"],
+        "Airborne Warning and Control System": ["EH-101A AEW"]
     },
     "El Gasing": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["Bf 109", "He 51", "Fw 190A 'Würger'", "Fw 190D 'Würger'", "Ta 152", "Me 163", "Me 262"],
+        "Heavy Fighter": ["Me 410 'Hornisse'", "Ta 154", "Bf 110", "Do 335 'Pfeil'"],
+        "Multirole Fighter/Fighter-Bomber": ["Do 17", "Ju 88", "Ju 388", "Fw 190F", "Tornado", "EF2000", "Do 217",],
+        "Light Bomber/CAS": ["Ju 87 'Stuka'", "Alpha Jet A", "Hs 123"],
+        "Medium Bomber": ["Do 17 'Fliegender Bleistift'", "He 111", "Ju 188", "Ar 234"],
+        "Heavy Bomber": ["Fw 200", "He 177", "Me 264"],
+        "Reconnaissance Aircraft": ["Ar 196", "BV 138", "Ar 234"],
+        "Helicopter": ["BO 105", "EC-665"],
+        "Transport Plane/Refuelling Tanker": ["Ju 52", "Me 323", "Me 321", "Ar 232", "BV 222", "A310 MRTT", "C-160", "A400M"],
+        "Airborne Warning and Control System": ["Boeing E-3 Sentry"]
     },
     "Snowdwellers": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["J11", "J8A", "J6B", "J22", "J20", "J26", "J21", "J29", "J32", "J35 'Draken'"],
+        "Heavy Fighter": ["Mosquito"],
+        "Multirole Fighter/Fighter-Bomber": ["JA37 'Viggen'", "JAS 39 'Gripen'"],
+        "Light Bomber/CAS": ["SAAB-105", "A32A", "B17"],
+        "Medium Bomber": ["B3C", "B18"],
+        "Heavy Bomber": [null],
+        "Reconnaissance Aircraft": ["SAAB-105", "B17"],
+        "Helicopter": ["HKP3", "HKP2", "HKP9"],
+        "Transport Plane/Refuelling Tanker": ["C-390 'Millennium'", "C-130 'Hercules'", "KC-130"],
+        "Airborne Warning and Control System": ["Saab 340 AEW&C"]
     },
     "Yankees": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["BF2C", "F2A 'Buffalo'", "F3F", "P-26 'Peashooter'", "P-36 'Hawk'", "F4F 'Wildcat", "F4U 'Corsair'", "F6F 'Wildcat'", "P-39 'Airacobra'", "P-40 'Warhawk'", "P-51 'Mustang'", "F8F 'Bearcat'", "P-47 'Thunderbolt'", "P-63 'Kingcobra'", "F2G 'Super Corsair'", "F-80 'Shooting Star", "F-86 'Sabre'", "F-89 'Scorpion'", "F2H 'Phantom'", "F9F 'Panther'", "F-100 'Super Sabre'", "F-104 'Starfighter'", "F-11 'Tiger'", "F3H 'Demon'", "F4D 'Skyray'", "F8U 'Crusader'", "F-106 'Delta Dart'", "F-5 'Freedom Fighter'"],
+        "Heavy Fighter": ["P-38 'Lightning'", "F-82 'Twin Mustang'", "F7F 'Tigercat'", "F-4 'Phantom II", "F-14 'Tomcat'", "F-15C 'Eagle'", "F-22 'Raptor'"],
+        "Multirole Fighter/Fighter-Bomber": ["F-16C 'Fighting Falcon'", "F-15E 'Strike Eagle'", "F/A-18C/D 'Hornet'", "F/A-18E/F 'Super Hornet'", "F-35 'Lightning II'", "F-105 'Thunderchief'", "F-111 'Aardvark'"],
+        "Light Bomber/CAS": ["A-36 'Apache'", "A-26 'Invader'", "AM-1 'Mauler'", "A-1 'Skyraider'", "A-10 'Thunderbolt II'", "A-4 'Skyhawk'", "F-117 'Nighthawk'", "A-6 'Intruder'", "A-7 'Corsair II'", "SB2U 'Vindicator'", "SBD 'Dauntless'", "TBD 'Devastator'", "TBF/TBM 'Avenger'", "SB2C 'Helldiver'"],
+        "Medium Bomber": ["A-20 'Havoc'", "B-25 'Mitchell", "B-10", "B-18", "PBM-1 'Mariner'", "PBY-5 'Catalina'", "B-34 'Lexington'", "PV-2 'Harpoon'", "B-57 'Canberra'"],
+        "Heavy Bomber": ["B-17 'Flying Fortress'", "PB4Y 'Liberator'", "B-24 'Liberator'", "B-29 'Superfortress'", "B-36 'Peacemaker'", "B-52 'Stratofortress'", "B-1B 'Lancer'", "B-2 'Spirit'"],
+        "Reconnaissance Aircraft": ["SC-1 'Seahawk'", "SR-71 'Blackbird'", "U-2 'Dragon Lady'", "OS2U-1 'Kingfisher'", "PBY-5 'Catalina'"],
+        "Helicopter": ["AH-1 'Cobra'", "UH-1 'Iroqois'", "UH-60 'Black Hawk'", "AH-64 'Apache'", "CH-47 'Chinook'", "RAH-66 'Comanche'", "AH-6 'Little Bird'"],
+        "Transport Plane/Refuelling Tanker": ["C-17 'Globemaster III'", "C-130 'Hercules'", "C-5 'Galaxy'", "VC-25 (Air Force One)", "KC-46 'Pegasus'", "KC-135 'Stratotanker'"],
+        "Airborne Warning and Control System": ["E-3 'Sentry'", "E-2 'Hawkeye'"]
     },
     "Killswitch": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["Sakeen", "Sa'ar", "Sambad", "Kfir C.7", "Shahak"],
+        "Heavy Fighter": ["Kurnass 2000", "Baz", ],
+        "Multirole Fighter/Fighter-Bomber": ["Netz", "F-15I Ra'am", "F-35I"],
+        "Light Bomber/CAS": ["A-4E 'Skyhawk'", "Ayit"],
+        "Medium Bomber": ["Vautour IIA"],
+        "Heavy Bomber": ["B-17 'Flying Fortress'"],
+        "Reconnaissance Aircraft": [null],
+        "Helicopter": ["Tzefa", "Peten", "Saraph", "Lahatut"],
+        "Transport Plane/Refuelling Tanker": ["C-1030J 'Super Hercules'"],
+        "Airborne Warning and Control System": ["Gulfstream G550CAEW"]
     },
     "Chronos": {
-        "Fighter": [],
-        "Heavy Fighter": [],
-        "Multirole Fighter": [],
-        "Light Bomber": [],
-        "Medium Bomber": [],
-        "Heavy Bomber": [],
-        "Reconnaissance Aircraft": []
+        "Fighter": ["J-2", "J-5", "J-7II", "J-6", "J-8B"],
+        "Heavy Fighter": ["J-11"],
+        "Multirole Fighter/Fighter-Bomber": ["J-10", "J-20", "J-35", "JH-7", ],
+        "Light Bomber/CAS": ["Q-5"],
+        "Medium Bomber": ["Qing-6", "H-5"],
+        "Heavy Bomber": ["H-6"],
+        "Reconnaissance Aircraft": ["JZ-8"],
+        "Helicopter": ["Z-11", "Z-9", "Z-10", "Z-19"],
+        "Transport Plane/Refuelling Tanker": ["Y-20"],
+        "Airborne Warning and Control System": ["KJ-2000", "KJ-200", "KJ-500"]
     }
 }
 export {roles, races, regions, roleSkills, roleWeapon, ranks, guilds, titles, tankVariants, aircraftVariants}
