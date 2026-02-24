@@ -1,6 +1,7 @@
 import {fsdatabase} from "./config.js";
 import {doc, setDoc, query, getDocs, orderBy, limit, collection} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions } from "./data.js";
+import { roles, races, ranks, roleWeapon, roleSkills, guilds, titles, regions, aircraftVariants, tankVariants } from "./data.js";
+import { skillListDescription } from "./skillDescription.js";
 var totalscore = 0;
 new Date;
 function updateLeaderboard(name, score, rank){
@@ -84,6 +85,7 @@ function submitName() {
         const race = getRandomElement(races);
 
         let role;
+        var vehicle;
         const randomChance = Math.random() * 100;
 
         if (randomChance < 1) {
@@ -96,7 +98,7 @@ function submitName() {
             } while (
                 (["Demon", "Sarkaz", "Orc"].includes(race) && ["Healer", "Paladin", "Saint"].includes(role)) ||
                 (role === "Blacksmith" && race !== "Dwarf") ||
-                ["Demon King", "Saint"].includes(role) || ((role == "Rifleman" || role == "Sapper") && (race == "Beast" || race == "Succubus" || race == "Dwarf" || race == "Feline" || race == "Slime" || race == "Deer"))
+                ["Demon King", "Saint"].includes(role) || ((role == "Rifleman" || role == "Sapper" || role == "Panzertruppe" || role == "Military Pilot") && (race == "Beast" || race == "Succubus" || race == "Dwarf" || race == "Feline" || race == "Slime" || race == "Deer"))
             );
         }
 
@@ -110,7 +112,6 @@ function submitName() {
         const lev = getRandomNumber(1, 100);
         const guild = getRandomElement(guilds);
         const region = getRandomElement(regions);
-        const characterSkills = [];
         const numberOfSkills = getRandomNumber(3, 5);
         const age = getRandomNumber(22, 60);
         const skillList = document.getElementById("charSkill");
@@ -131,18 +132,11 @@ function submitName() {
             document.getElementById("SecondRole").style.display = "none";
         }
 
-        if(role == "Flying Ace" || role == "Panzertruppe"){
+        if(role == "Military Pilot" || role == "Panzertruppe"){
             document.getElementById("specialVehicle").style.display = "block";
         }
         else{
             document.getElementById("specialVehicle").style.display = "none";
-        }
-
-        if (role == "Artillerist") {
-            document.getElementById("artilleryPiece").style.display = "block";
-        }
-        else{
-            document.getElementById("artilleryPiece").style.display = "none";
         }
 
         //Band score for ability and title
@@ -175,6 +169,7 @@ function submitName() {
 
         skillList.innerHTML = "";
         const availableSkill = roleSkills[role];
+        console.log(role);
 
         for (let i = 0; i < numberOfSkills; i++) {
             var skill = getRandomElement(availableSkill);
@@ -190,6 +185,26 @@ function submitName() {
                     skill = getRandomElement(availableSkill);
                 }
                 while(skill == "Total Immunity");
+                if (skillList.childElementCount == 0) {
+                    console.log(skill);
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${skill} (${rank})`;
+                    skillList.appendChild(listItem);
+                } else {
+                    console.log(skill);
+                    const items = skillList.getElementsByTagName('li');
+                for (let i = 0; i < skillList.childElementCount; i++) {
+                    console.log(items)
+                    if (skill.split(" ") == items[i].textContent.split(" ").splice(0, -1)) {
+                        do {
+                            skill = getRandomElement(availableTitles);
+                            rank = getRandomElement(ranks);
+                        } while (title.split(" ") == items[i].split(" ").splice(0, -1));
+                    }
+                }
+                const listItem = document.createElement("li");
+                listItem.textContent = `${skill} (${rank})`;
+                skillList.appendChild(listItem);}
                 if(rank == "F"){
                     totalscore = totalscore + F_score;
                 }
@@ -218,17 +233,8 @@ function submitName() {
                     totalscore = totalscore + SSS_score;
                 }
             }
-            if (!characterSkills.includes(skill)) {
-                characterSkills.push({
-                    skill: skill,
-                    rank: rank
-                })
-            }
-            const listItem = document.createElement("li");
-            listItem.textContent = `${skill} (${rank})`;
-            skillList.appendChild(listItem);
         }
-        const titlesCount = getRandomNumber(1, 2);
+        var titlesCount = getRandomNumber(1, 2);
         const titleList = document.getElementById("charTitle");
         titleList.innerHTML = "";
 
@@ -257,6 +263,27 @@ function submitName() {
                 totalscore = totalscore + F_score
             }
             else{
+                if (titleList.childElementCount == 0) {
+                    console.log(title);
+                    const listItem = document.createElement("li");
+                    listItem.textContent = `${title} (${titleRank})`;
+                    titleList.appendChild(listItem);
+                } else {
+                    console.log(title);
+                    const items = titleList.getElementsByTagName('li');
+                    for (let i = 0; i < titleList.childElementCount; i++) {
+                        console.log(items)
+                        if (title.split(" ") == items[i].textContent.split(" ").splice(0, -1)) {
+                            do {
+                                title = getRandomElement(availableTitles);
+                                titleRank = getRandomElement(ranks);
+                            } while (title.split(" ") == items[i].split(" ").splice(0, -1));
+                        }
+                    }
+                const listItem = document.createElement("li");
+                listItem.textContent = `${title} (${titleRank})`;
+                titleList.appendChild(listItem);
+                }
                 if(titleRank == "F"){
                     totalscore = totalscore + F_score;
                 }
@@ -285,17 +312,25 @@ function submitName() {
                     totalscore = totalscore + SSS_score
                 }
             }
-            const listItem = document.createElement("li");
-            listItem.textContent = `${title} (${titleRank})`;
-            titleList.appendChild(listItem);
+            
         }
+        console.log(region);
 
         const availableWeapons = roleWeapon[role];
         var characterWeapon = [];
-        const WeaponNumber = getRandomNumber(1, 3);
+        var WeaponNumber;
+        if(availableWeapons.length == 1 || role == "Panzertruppe" || role == "Military Pilot"){
+            WeaponNumber = 1;
+        }
+        else if(availableWeapons.length == 2){
+            WeaponNumber = getRandomNumber(1, 2);
+        }
+        else{
+            WeaponNumber = getRandomNumber(1, 3);
+        }
 
         for (let i = 0; i <WeaponNumber; i++){
-            const weapon = getRandomElement(availableWeapons);
+            var weapon = getRandomElement(availableWeapons);
             var rank = getRandomElement(ranks);
             if(weapon == "None"){
                 characterWeapon.push(`${weapon}`)
@@ -303,37 +338,158 @@ function submitName() {
             else if(weapon == "Unknown"){
                 rank = "???";
                 totalscore = totalscore + getRandomElement(random_score);
+                characterWeapon.push(`${weapon} (${rank})`);
             }
             else{
-                if(rank == "F"){
-                    totalscore = totalscore + F_score;
+                if (role == "Panzertruppe") {
+                    if (tankVariants[guild][weapon] == null) {
+                        do {
+                            weapon = getRandomElement(availableWeapons);
+                            rank = getRandomElement(ranks);
+                        } while (tankVariants[guild][weapon] == null);
+                    }
+                    else{
+                        vehicle = getRandomElement(tankVariants[guild][weapon]);
+                    }
+                    if(rank == "F"){
+                        totalscore = totalscore + F_score;
+                    }
+                    else if(rank == "E"){
+                        totalscore = totalscore + E_score;
+                    }
+                    else if(rank == "D"){
+                        totalscore = totalscore + D_score;
+                    }
+                    else if(rank == "C"){
+                        totalscore = totalscore + C_score;
+                    }
+                    else if(rank == "B"){
+                        totalscore = totalscore + B_score;
+                    }
+                    else if(rank == "A"){
+                        totalscore = totalscore + A_score;
+                    }
+                    else if(rank == "S"){
+                        totalscore = totalscore + S_score;
+                    }
+                    else if(rank == "SS"){
+                        totalscore = totalscore + SS_score;
+                    }
+                    else{
+                        totalscore = totalscore + SSS_score;
+                    };
+                    characterWeapon.push(`${weapon} (${rank})`);
                 }
-                else if(rank == "E"){
-                    totalscore = totalscore + E_score;
-                }
-                else if(rank == "D"){
-                    totalscore = totalscore + D_score;
-                }
-                else if(rank == "C"){
-                    totalscore = totalscore + C_score;
-                }
-                else if(rank == "B"){
-                    totalscore = totalscore + B_score;
-                }
-                else if(rank == "A"){
-                    totalscore = totalscore + A_score;
-                }
-                else if(rank == "S"){
-                    totalscore = totalscore + S_score;
-                }
-                else if(rank == "SS"){
-                    totalscore = totalscore + SS_score;
+                else if(role == "Military Pilot"){
+                    if (aircraftVariants[guild][weapon] == null) {
+                        do {
+                            weapon = getRandomElement(availableWeapons);
+                            rank = getRandomElement(ranks);
+                        } while (aircraftVariants[guild][weapon] == null);
+                    } else {
+                        vehicle = getRandomElement(aircraftVariants[guild][weapon]);
+                    };
+                    if(rank == "F"){
+                        totalscore = totalscore + F_score;
+                    }
+                    else if(rank == "E"){
+                        totalscore = totalscore + E_score;
+                    }
+                    else if(rank == "D"){
+                        totalscore = totalscore + D_score;
+                    }
+                    else if(rank == "C"){
+                        totalscore = totalscore + C_score;
+                    }
+                    else if(rank == "B"){
+                        totalscore = totalscore + B_score;
+                    }
+                    else if(rank == "A"){
+                        totalscore = totalscore + A_score;
+                    }
+                    else if(rank == "S"){
+                        totalscore = totalscore + S_score;
+                    }
+                    else if(rank == "SS"){
+                        totalscore = totalscore + SS_score;
+                    }
+                    else{
+                        totalscore = totalscore + SSS_score;
+                    };
+                    characterWeapon.push(`${weapon} (${rank})`);
                 }
                 else{
-                    totalscore = totalscore + SSS_score;
+                    if (characterWeapon.length == 0) {
+                        console.log(weapon);
+                        characterWeapon.push(`${weapon} (${rank})`);
+                        if(rank == "F"){
+                            totalscore = totalscore + F_score;
+                        }
+                        else if(rank == "E"){
+                            totalscore = totalscore + E_score;
+                        }
+                        else if(rank == "D"){
+                            totalscore = totalscore + D_score;
+                        }
+                        else if(rank == "C"){
+                            totalscore = totalscore + C_score;
+                        }
+                        else if(rank == "B"){
+                            totalscore = totalscore + B_score;
+                        }
+                        else if(rank == "A"){
+                            totalscore = totalscore + A_score;
+                        }
+                        else if(rank == "S"){
+                            totalscore = totalscore + S_score;
+                        }
+                        else if(rank == "SS"){
+                            totalscore = totalscore + SS_score;
+                        }
+                        else{
+                            totalscore = totalscore + SSS_score;
+                        };
+                    } else {
+                        for (let i = 0; i < characterWeapon.length; i++) {
+                            if (weapon.split(" ") == characterWeapon[i].split(" ").splice(0, -1)) {
+                                do {
+                                    weapon = getRandomElement(availableWeapons);
+                                    rank = getRandomElement(ranks);
+                                } while (weapon.split(" ") == characterWeapon[i].split(" ").splice(0, -1));
+                            }
+                        }
+                        console.log(weapon);
+                        characterWeapon.push(`${weapon} (${rank})`);
+                        if(rank == "F"){
+                            totalscore = totalscore + F_score;
+                        }
+                        else if(rank == "E"){
+                            totalscore = totalscore + E_score;
+                        }
+                        else if(rank == "D"){
+                            totalscore = totalscore + D_score;
+                        }
+                        else if(rank == "C"){
+                            totalscore = totalscore + C_score;
+                        }
+                        else if(rank == "B"){
+                            totalscore = totalscore + B_score;
+                        }
+                        else if(rank == "A"){
+                            totalscore = totalscore + A_score;
+                        }
+                        else if(rank == "S"){
+                            totalscore = totalscore + S_score;
+                        }
+                        else if(rank == "SS"){
+                            totalscore = totalscore + SS_score;
+                        }
+                        else{
+                            totalscore = totalscore + SSS_score;
+                        };
+                    }
                 }
-            }
-            characterWeapon.push(`${weapon} (${rank})`);
+            };
         }
         if(totalscore < F_overall){
             ra = "N/A";
@@ -379,11 +535,12 @@ function submitName() {
         document.getElementById("charGuild").textContent = guild;
         document.getElementById("charRegion").textContent = region;
         document.getElementById("charAge").textContent = age;
-        document.getElementById("charWeapon").textContent = characterWeapon;
+        document.getElementById("charWeapon").textContent = characterWeapon.join(", ");
         document.getElementById("charDexterity").textContent = dex;
         document.getElementById("charLuck").textContent = luck;
         document.getElementById("charEndurance").textContent = endurance;
         document.getElementById("charGender").textContent = gender;
+        document.getElementById("charVehicle").textContent = vehicle;
 
         if (["Healer", "Paladin", "Saint"].includes(role)) {
             const divinePower = getRandomNumber(50, 100);
