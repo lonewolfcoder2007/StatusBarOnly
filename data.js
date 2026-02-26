@@ -148,17 +148,17 @@ const tankVariants = {
         "Tankette": ["T-27"], 
         "Self-Propelled Gun": ["SU-76", "SU-85", "SU-100", "SU-122", "SU-152", "ISU-122", "ISU-152", "SU-57", "ASU-57"], 
         "Medium Tank": ["T-28", "T-34", "T-34-85", "T-44", "T-54/55"],
-        "Self-Propelled Anti-Aircraft Vehicle": ["ZSU-37", "ZSU-37-2", "ZSU-57-2", "ZSU-23-4", "Osa-M", "Pantsir-S1", "Strela-10", "2S6"],
+        "Self-Propelled Anti-Aircraft Vehicle": ["ZSU-37", "ZSU-37-2", "ZSU-57-2", "ZSU-23-4", "Osa-M", "Pantsir-S1", "Strela-10", "2S6", "BTR-152A"],
         "Heavy Tank": ["KV-1", "KV-2", "IS-85/IS-1", "IS-2", "IS-3", "IS-4", "T-10"],
         "Super Heavy Tank": ["T-35", "SMK"],
         "Main Battle Tank": ["T-62", "T-64", "T-72", "T-80", "T-90", "T-14 Armata"],
         "Infantry Fighting Vehicle/Armor Support Vehicle": ["BMP-1", "BMP-2", "BMP-3", "BMP-2M", "BMPT Terminator"],
-        "Armored Personnel Carrier": ["BTR-80A", "BTR-82AT", "BMD-4", "BMD-4M", "BMD-4M2"]
+        "Armored Personnel Carrier": ["BTR-80A", "BTR-82AT", "BMD-4", "BMD-4M", "BMD-4M2", "BTR-152"]
     },
     "RHODES": {
         "Light Tank": ["Ka-Mi", "Ha-Go", "Ke-Ni", "Type 16"],
         "Tankette": ["Type 94", "Type 97 Te-Ke"],
-        "Self-Propelled Gun": ["Ro-Go", "Ho-Ro",, "Chi-Ha LG", "Ho-Ni I", "Ho-Ni III", "Na-To", "Type 99", "Ho-Ri", "Type 60 SPRG", "Type 75 SPH"],
+        "Self-Propelled Gun": ["Ro-Go", "Ho-Ro", "Chi-Ha LG", "Ho-Ni I", "Ho-Ni III", "Na-To", "Type 99", "Ho-Ri", "Type 60 SPRG", "Type 75 SPH"],
         "Medium Tank": ["Ka-Chi", "Chi-He", "Ho-I", "Chi-Ha", "Chi-Ha Kai", "Chi-Nu", "Chi-To", "Chi-Ri"],
         "Self-Propelled Anti-Aircraft Vehicle": ["Ta-Se", "So-Ki", "Type 87", "Type 93"],
         "Heavy Tank": ["Ro-Go", "Pz.Kpfw VI 'Tiger I'"],
@@ -216,7 +216,7 @@ const tankVariants = {
         "Armored Personnel Carrier": ["Boxer MGS", "Raketenautomat"]
     },
     "Snowdwellers": {
-        "Light Tank": ["Strv m/31", "Strv m/38", "Strv m/40L", "Strv 74", "CV 90105 TML", ],
+        "Light Tank": ["Strv m/31", "Strv m/38", "Strv m/40L", "Strv 74", "CV 90105 TML"],
         "Tankette": ["Pbil m/40"],
         "Self-Propelled Gun": ["Ikv 72", "Sav m/43", "Bkan 1C"],
         "Medium Tank": ["Ikv 73", "Strv m/42"],
@@ -233,7 +233,7 @@ const tankVariants = {
         "Self-Propelled Gun": ["M18 GMC 'Hellcat'", "M3 GMC", "M8 HMC", "M10 GMC 'Wolverine'", "M36 GMC", "M44", "M55", "M109A1 Paladin", "M50", "M56 Scorpion"],
         "Medium Tank": ["M3 Lee", "M4 Sherman", "M26 Pershing", "M47 Patton II", "M48A1 Patton"],
         "Self-Propelled Anti-Aircraft Vehicle": ["M13 MGMC", "M15 CGMC", "M19A1 MGMC", "M42 Duster", "M163 VADS", "M247 Sergeant York DIVAD", "Imp.Chaparral", "LAV-AD"],
-        "Heavy Tank": ["T26E5", "M103"],
+        "Heavy Tank": ["T26E5", "M103", "M4A3E2 Sherman 'Jumbo'"],
         "Super Heavy Tank": ["T95"],
         "Main Battle Tank": ["M60", "M1 Abrams"],
         "Infantry Fighting Vehicle/Armor Support Vehicle": ["LVT(A)", "M3 Bradley"],
@@ -266,9 +266,9 @@ const tankVariants = {
 };
 const aircraftVariants = {
     "PSHT": {
-        "Fighter": ["I-153 M-62", "I-15", "I-16", "MiG-3", "La-5", "LaGG-3", "Yak-1", "Yak-7", "Yak-9", "La-7", "Yak-3", "La-9", "MiG-15", "Su-9", "MiG-17", "MiG-21", "MiG-23", "MiG-29", "Su-7"],
+        "Fighter": ["I-153 M-62", "I-15", "I-16", "MiG-3", "La-5", "LaGG-3", "Yak-1", "Yak-7", "Yak-9", "La-7", "Yak-3", "La-9", "MiG-15", "Su-9", "MiG-17", "MiG-21", "MiG-23", "Su-7"],
         "Heavy Fighter": ["MiG-25", "MiG-31", "Su-27", "Su-33", "Pe-3", "Yak-2 KABB"],
-        "Multirole Fighter/Fighter-Bomber": ["Su-30", "Yak-38", "Su-17/Su-22", "Su-34", "Su-35", "Su-57"],
+        "Multirole Fighter/Fighter-Bomber": ["MiG-29", "Su-30", "Yak-38", "Su-17/Su-22", "Su-34", "Su-35", "Su-57", "MiG-35D 'Super Fulcrum'"],
         "Light Bomber/CAS": ["BB-1", "Il-2 Shturmovik", "Su-2", "Su-6", "Su-7", "Su-25", "Yak-4"],
         "Medium Bomber": ["Su-24", "Ar-2", "SB 2M", "DB-3", "IL-4", "Yer-2", "Tu-2", "IL-28", "Tu-14", "Tu-16"],
         "Heavy Bomber": ["TB-3M", "Pe-8", "Be-6", "Yak-28", "Tu-95", "Tu-160", "Tu-22"],
@@ -279,7 +279,7 @@ const aircraftVariants = {
     },
     "RHODES": {
         "Fighter": ["A5M", "Ki-27", "Ki-10", "Ki-43", "A6M 'Zero'", "Ki-44", "Ki-61 'Hien'", "N1K", "J2M", "Ki-100", "A7M2 'Reppu'", "J6K", "J7W", "Ki-84 'Hayate'", "Ki-87", "N1K1-J", "N1K2-J", "Ki-94", "Kikka", "T-2", "F1M"],
-        "Heavy Fighter": ["Ki-45", "J1N", "Ki-102", "J5N", "Ki-83", "Ki-45", ],
+        "Heavy Fighter": ["Ki-45", "J1N", "Ki-102", "J5N", "Ki-83", "Ki-45"],
         "Multirole Fighter/Fighter-Bomber": ["F-1", "F-15J", "F-2A Kai", "F-2A Super Kai"],
         "Light Bomber/CAS": ["Ki-102", "E13A1", "B5N", "E7K", "E8N", "F1M", "Ki-32", "B6N 'Tenzan'", "D4Y 'Suisei'", "Ki-48", "B7A", "D3A"],
         "Medium Bomber": ["Ki-21", "G3M", "G4M", "Ki-49", "P1Y1"],
@@ -293,7 +293,7 @@ const aircraftVariants = {
         "Fighter": ["D.371", "D.500", "H-75A", "M.B.151", "D.520", "M.S.410", "V.G.33", "NC.900", "M.D.450B Ouragan", "S.O.4050 Vautour", "Mirage IIIC"],
         "Heavy Fighter": ["Potez 630"],
         "Multirole Fighter/Fighter-Bomber": ["Super Mystere B2", "Mirage 2000", "Mirage 4000", "Rafale", "Jaguar"],
-        "Light Bomber/CAS": ["Br.693AB2", "Alpha Jet E", "Potez 633", "V-156-F", "LeO 451", "S.O.4050 Vautour II", ],
+        "Light Bomber/CAS": ["Br.693AB2", "Alpha Jet E", "Potez 633", "V-156-F", "LeO 451", "S.O.4050 Vautour II"],
         "Medium Bomber": ["F.222.2", "M.B.175", "S.O.4050 Vautour IIB"],
         "Heavy Bomber": ["M.B.162"],
         "Reconnaissance Aircraft": ["GL.832HY", "Loire 130"],
@@ -303,7 +303,7 @@ const aircraftVariants = {
     },
     "Dragonshade": {
         "Fighter": ["Fury", "Gladiator", "Sea Gladiator", "Nimrod", "Boomerang", "Martlet", "Hurricane", "Sea Hurricane", "Spitfire", "Hellcat", "Typhoon", "Thunderbolt", "Seafire", "Sea Fury", "Tempest", "Meteor F", "Sea Venom", "Swift F", "Hunter F", "Javelin F.(A.W.)", "Lightning F"],
-        "Heavy Fighter": ["Whirlwind", "Hornet", "Phantom FGR.2", "Phantom FG.1", "Beaufighter", ],
+        "Heavy Fighter": ["Whirlwind", "Hornet", "Phantom FGR.2", "Phantom FG.1", "Beaufighter"],
         "Multirole Fighter/Fighter-Bomber": ["Attacker FB", "Vampire F.B", "Hunter FGA", "Typhoon FGR.4", "F-35C", "Sea Harrier II", "Tornado F", "Brigand B 1", "Mosquito", "Harrier GR", "Hawk 200", "Jaguar", "Tornado"],
         "Light Bomber/CAS": ["Swordfish", "Chesapeake", "Avenger", "Buccaneer S", "Firefly F"],
         "Medium Bomber": ["Beaufort", "Blenheim", "Hampden", "Catalina", "Boston", "Hudson", "Havoc", "Wellington", "Wyvern S"],
@@ -318,7 +318,7 @@ const aircraftVariants = {
         "Heavy Fighter": ["F.C.20", "SM.91"],
         "Multirole Fighter/Fighter-Bomber": ["F-2000A", "Tornado"],
         "Light Bomber/CAS": ["Ba.65 (K.14) L", "MB-326K", "A-11 Ghibli"],
-        "Medium Bomber": ["F.C.20", "Breda 88", "B.R.20DR", "S.M.79", "S.81", "Z.1007 bis serie 5", ],
+        "Medium Bomber": ["F.C.20", "Breda 88", "B.R.20DR", "S.M.79", "S.81", "Z.1007 bis serie 5"],
         "Heavy Bomber": ["P.108A Artgliere"],
         "Reconnaissance Aircraft": ["Ro.43", "Ro.44", "G.91"],
         "Helicopter": ["AB 205", "A.109", "A129"],
@@ -328,7 +328,7 @@ const aircraftVariants = {
     "El Gasing": {
         "Fighter": ["Bf 109", "He 51", "Fw 190A 'Würger'", "Fw 190D 'Würger'", "Ta 152", "Me 163", "Me 262"],
         "Heavy Fighter": ["Me 410 'Hornisse'", "Ta 154", "Bf 110", "Do 335 'Pfeil'"],
-        "Multirole Fighter/Fighter-Bomber": ["Do 17", "Ju 88", "Ju 388", "Fw 190F", "Tornado", "EF2000", "Do 217",],
+        "Multirole Fighter/Fighter-Bomber": ["Do 17", "Ju 88", "Ju 388", "Fw 190F", "Tornado", "EF2000", "Do 217"],
         "Light Bomber/CAS": ["Ju 87 'Stuka'", "Alpha Jet A", "Hs 123"],
         "Medium Bomber": ["Do 17 'Fliegender Bleistift'", "He 111", "Ju 188", "Ar 234"],
         "Heavy Bomber": ["Fw 200", "He 177", "Me 264"],
@@ -356,27 +356,27 @@ const aircraftVariants = {
         "Light Bomber/CAS": ["A-36 'Apache'", "A-26 'Invader'", "AM-1 'Mauler'", "A-1 'Skyraider'", "A-10 'Thunderbolt II'", "A-4 'Skyhawk'", "F-117 'Nighthawk'", "A-6 'Intruder'", "A-7 'Corsair II'", "SB2U 'Vindicator'", "SBD 'Dauntless'", "TBD 'Devastator'", "TBF/TBM 'Avenger'", "SB2C 'Helldiver'"],
         "Medium Bomber": ["A-20 'Havoc'", "B-25 'Mitchell", "B-10", "B-18", "PBM-1 'Mariner'", "PBY-5 'Catalina'", "B-34 'Lexington'", "PV-2 'Harpoon'", "B-57 'Canberra'"],
         "Heavy Bomber": ["B-17 'Flying Fortress'", "PB4Y 'Liberator'", "B-24 'Liberator'", "B-29 'Superfortress'", "B-36 'Peacemaker'", "B-52 'Stratofortress'", "B-1B 'Lancer'", "B-2 'Spirit'"],
-        "Reconnaissance Aircraft": ["SC-1 'Seahawk'", "SR-71 'Blackbird'", "U-2 'Dragon Lady'", "OS2U-1 'Kingfisher'", "PBY-5 'Catalina'"],
+        "Reconnaissance Aircraft": ["SC-1 'Seahawk'", "SR-71 'Blackbird'", "U-2 'Dragon Lady'", "OS2U-1 'Kingfisher'", "PBY-5 'Catalina'", "RA-5C 'Vigilante'"],
         "Helicopter": ["AH-1 'Cobra'", "UH-1 'Iroqois'", "UH-60 'Black Hawk'", "AH-64 'Apache'", "CH-47 'Chinook'", "RAH-66 'Comanche'", "AH-6 'Little Bird'"],
         "Transport Plane/Refuelling Tanker": ["C-17 'Globemaster III'", "C-130 'Hercules'", "C-5 'Galaxy'", "VC-25 (Air Force One)", "KC-46 'Pegasus'", "KC-135 'Stratotanker'"],
         "Airborne Warning and Control System": ["E-3 'Sentry'", "E-2 'Hawkeye'"]
     },
     "Killswitch": {
         "Fighter": ["Sakeen", "Sa'ar", "Sambad", "Kfir C.7", "Shahak"],
-        "Heavy Fighter": ["Kurnass 2000", "Baz", ],
+        "Heavy Fighter": ["Kurnass 2000", "Baz"],
         "Multirole Fighter/Fighter-Bomber": ["Netz", "F-15I Ra'am", "F-35I"],
         "Light Bomber/CAS": ["A-4E 'Skyhawk'", "Ayit"],
         "Medium Bomber": ["Vautour IIA"],
         "Heavy Bomber": ["B-17 'Flying Fortress'"],
         "Reconnaissance Aircraft": [null],
         "Helicopter": ["Tzefa", "Peten", "Saraph", "Lahatut"],
-        "Transport Plane/Refuelling Tanker": ["C-1030J 'Super Hercules'"],
+        "Transport Plane/Refuelling Tanker": ["C-130J 'Super Hercules'"],
         "Airborne Warning and Control System": ["Gulfstream G550CAEW"]
     },
     "Chronos": {
         "Fighter": ["J-2", "J-5", "J-7II", "J-6", "J-8B"],
         "Heavy Fighter": ["J-11"],
-        "Multirole Fighter/Fighter-Bomber": ["J-10", "J-20", "J-35", "JH-7", ],
+        "Multirole Fighter/Fighter-Bomber": ["J-10", "J-20", "J-35", "JH-7"],
         "Light Bomber/CAS": ["Q-5"],
         "Medium Bomber": ["Qing-6", "H-5"],
         "Heavy Bomber": ["H-6"],
